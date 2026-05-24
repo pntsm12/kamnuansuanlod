@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>คิดส่วนลดออนไลน์</title>
+<meta name="description" content="คิดส่วนลดออนไลน์ฟรี ลด % เหลือเท่าไหร่ ลดหลายชั้น คิดว่าลดกี่ % และหาราคาเต็มจากราคาลดแล้ว ใช้งานง่าย ไม่ต้องโหลดแอป">
+<meta name="keywords" content="คิดส่วนลด, ส่วนลด, ลดราคา, ราคาหลังลด, ลดกี่เปอร์เซ็นต์, คำนวณส่วนลด">
+<meta property="og:title" content="คิดส่วนลดออนไลน์">
+<meta property="og:description" content="คิดส่วนลดออนไลน์ฟรี ลด % เหลือเท่าไหร่ ลดหลายชั้น และอีกหลายสูตร">
+<meta property="og:type" content="website">
+<link rel="canonical" href="https://kidsunlod.com/">
+<link rel="icon" href="favicon.ico" type="image/x-icon">
+<!-- Google AdSense -->
+<!-- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX" crossorigin="anonymous"></script> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+:root {
+  --bg:#FFFFFF; --bg2:#F7F7F5; --bg3:#F0EFEC;
+  --border:#E4E4E0; --border2:#D4D4CF;
+  --text:#1A1917; --text2:#706F6B; --text3:#B0AFA9;
+  --ink:#1A1917; --accent:#2563EB;
+}
+html { scroll-behavior:smooth; }
+body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; }
+
+header { position:sticky; top:0; z-index:100; background:rgba(255,255,255,0.92); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:52px; display:flex; align-items:center; padding:0 24px; }
+.logo { font-family:'Noto Serif Thai',serif; font-size:20px; font-weight:700; color:var(--ink); }
+
+.ad-strip { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; justify-content:center; padding:8px 16px; }
+.ad-728 { width:100%; max-width:728px; height:90px; background:var(--bg); border:1.5px dashed var(--border2); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--text3); font-size:12px; }
+@media(max-width:600px){.ad-728{height:60px;}}
+.ad-mid { display:flex; justify-content:center; margin:28px 0; }
+
+.page-wrap { max-width:640px; margin:0 auto; padding:40px 20px 64px; }
+.page-heading { margin-bottom:28px; }
+.page-heading h1 { font-family:'Noto Serif Thai',serif; font-size:clamp(32px,7vw,48px); font-weight:700; color:var(--ink); line-height:1.15; letter-spacing:-0.8px; }
+.page-heading p { margin-top:8px; font-size:15px; color:var(--text2); }
+
+/* Tabs */
+.type-tabs-2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; }
+.type-tabs-4 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; }
+.type-tab { padding:10px 6px; border:1.5px solid var(--border); border-radius:9px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:14px; font-weight:600; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; line-height:1.4; }
+.type-tab.active { border-color:var(--ink); background:var(--ink); color:#fff; }
+.type-tab:hover:not(.active) { border-color:var(--border2); }
+
+.field-label { font-size:13px; font-weight:600; color:var(--text2); letter-spacing:0.3px; margin-bottom:8px; display:block; }
+.hint { font-size:13px; color:var(--text3); margin-bottom:12px; }
+
+.input-wrap { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; background:var(--bg); transition:border-color .15s,box-shadow .15s; margin-bottom:12px; }
+.input-wrap:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
+.input-wrap input { flex:1; padding:11px 14px; border:none; outline:none; font-family:'Sarabun',sans-serif; font-size:20px; font-weight:600; color:var(--ink); background:transparent; width:100%; }
+.input-wrap input::placeholder { color:var(--text3); font-weight:400; font-size:15px; }
+.input-suffix { padding:0 14px; font-size:14px; font-weight:600; color:var(--text3); border-left:1px solid var(--border); background:var(--bg2); min-height:46px; display:flex; align-items:center; }
+
+.calc-panel { display:none; }
+.calc-panel.active { display:block; }
+
+.btn-calc { width:100%; margin-top:4px; padding:13px; background:var(--ink); color:#fff; border:none; border-radius:9px; font-family:'Sarabun',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:opacity .15s,transform .1s; }
+.btn-calc:hover { opacity:0.85; }
+.btn-calc:active { transform:scale(0.99); }
+
+/* Result */
+.result-box { display:none; margin-top:20px; animation:fadeUp .3s ease; }
+@keyframes fadeUp { from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);} }
+
+.result-main { padding:24px 0 20px; border-top:1.5px solid var(--border); border-bottom:1.5px solid var(--border); margin-bottom:16px; }
+.result-label { font-size:12px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--text3); margin-bottom:6px; }
+.result-num { font-family:'Noto Serif Thai',serif; font-size:clamp(52px,13vw,80px); font-weight:700; color:var(--ink); line-height:1; letter-spacing:-2px; }
+.result-unit { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:400; color:var(--text2); margin-left:6px; vertical-align:bottom; display:inline-block; margin-bottom:6px; }
+.result-detail { font-size:15px; color:var(--text2); margin-top:10px; }
+.result-detail strong { color:var(--ink); font-weight:600; }
+
+.stats-row { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:12px; }
+.stat-cell { background:var(--bg); padding:16px; text-align:center; }
+.stat-num { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:700; color:var(--ink); letter-spacing:-0.5px; }
+.stat-label { font-size:12px; color:var(--text3); margin-top:3px; }
+
+.btn-share { width:100%; padding:12px; background:transparent; border:1.5px solid var(--border); border-radius:9px; font-family:'Sarabun',sans-serif; font-size:14px; color:var(--text2); cursor:pointer; margin-bottom:12px; display:flex; align-items:center; justify-content:center; gap:8px; transition:all .15s; }
+.btn-share:hover { border-color:var(--ink); color:var(--ink); }
+
+.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:#fff; padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
+.toast.show { transform:translateX(-50%) translateY(0); }
+
+.info-section { border-top:1px solid var(--border); padding-top:32px; }
+.info-section h2 { font-family:'Noto Serif Thai',serif; font-size:18px; font-weight:700; color:var(--ink); margin-bottom:8px; }
+.info-section h2.mt { margin-top:24px; }
+.info-section p { font-size:14px; color:var(--text2); line-height:1.85; }
+
+footer { border-top:1px solid var(--border); padding:24px 20px; text-align:center; font-size:13px; color:var(--text3); }
+footer a { color:var(--text3); text-decoration:none; }
+footer a:hover { color:var(--text2); text-decoration:underline; }
+</style>
+</head>
+<body>
+
+<header><span class="logo">คิดส่วนลด</span></header>
+
+<div class="ad-strip">
+  <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Top)</div>
+</div>
+
+<div class="page-wrap">
+
+  <div class="page-heading">
+    <h1>คิดส่วนลด</h1>
+    <p>เลือกสูตรที่ต้องการ กรอกตัวเลข รู้ผลทันที</p>
+  </div>
+
+  <div class="type-tabs-4">
+    <button class="type-tab active" onclick="switchType('basic')">คิดราคาหลังลด</button>
+    <button class="type-tab" onclick="switchType('multi')">ลดหลายชั้น</button>
+    <button class="type-tab" onclick="switchType('howmuch')">ลดไปกี่ %</button>
+    <button class="type-tab" onclick="switchType('original')">คิดราคาเต็มจากราคาลด</button>
+  </div>
+
+  <!-- ── Panel 1: ลด % เหลือเท่าไหร่ ── -->
+  <div class="calc-panel active" id="panel-basic">
+    <span class="field-label">ราคาเต็ม</span>
+    <div class="input-wrap">
+      <input type="number" id="b-price" placeholder="เช่น 1500" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <span class="field-label">ส่วนลด</span>
+    <div class="input-wrap">
+      <input type="number" id="b-pct" placeholder="เช่น 30" min="0" max="100" inputmode="decimal">
+      <span class="input-suffix">%</span>
+    </div>
+    <p class="hint">ตัวอย่าง: ราคาเต็ม 1,500 บาท ลด 30% เหลือเท่าไหร่</p>
+    <button class="btn-calc" onclick="calcBasic()">คำนวณ</button>
+
+    <div class="result-box" id="res-basic">
+      <div class="result-main">
+        <div class="result-label">ราคาหลังหักส่วนลด</div>
+        <div>
+          <span class="result-num" id="b-final">–</span>
+          <span class="result-unit">บาท</span>
+        </div>
+        <div class="result-detail" id="b-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="b-saved">–</div>
+          <div class="stat-label">ประหยัดได้ (บาท)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="b-pct-show">–</div>
+          <div class="stat-label">ส่วนลด</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('basic')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 2: ลดหลายชั้น ── -->
+  <div class="calc-panel" id="panel-multi">
+    <span class="field-label">ราคาเต็ม</span>
+    <div class="input-wrap">
+      <input type="number" id="m-price" placeholder="เช่น 1000" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <span class="field-label">ส่วนลดชั้นที่ 1</span>
+    <div class="input-wrap">
+      <input type="number" id="m-p1" placeholder="เช่น 20" min="0" max="100" inputmode="decimal">
+      <span class="input-suffix">%</span>
+    </div>
+    <span class="field-label">ส่วนลดชั้นที่ 2</span>
+    <div class="input-wrap">
+      <input type="number" id="m-p2" placeholder="เช่น 10" min="0" max="100" inputmode="decimal">
+      <span class="input-suffix">%</span>
+    </div>
+    <span class="field-label">ส่วนลดชั้นที่ 3 <span style="color:var(--text3);font-weight:400;">(ถ้ามี)</span></span>
+    <div class="input-wrap">
+      <input type="number" id="m-p3" placeholder="เช่น 5" min="0" max="100" inputmode="decimal">
+      <span class="input-suffix">%</span>
+    </div>
+    <p class="hint">ตัวอย่าง: ราคา 1,000 บาท ลด 20% แล้วลดอีก 10% เหลือเท่าไหร่</p>
+    <button class="btn-calc" onclick="calcMulti()">คำนวณ</button>
+
+    <div class="result-box" id="res-multi">
+      <div class="result-main">
+        <div class="result-label">ราคาหลังหักส่วนลดทุกชั้น</div>
+        <div>
+          <span class="result-num" id="m-final">–</span>
+          <span class="result-unit">บาท</span>
+        </div>
+        <div class="result-detail" id="m-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="m-saved">–</div>
+          <div class="stat-label">ประหยัดได้รวม (บาท)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="m-total-pct">–</div>
+          <div class="stat-label">ลดรวมจริงๆ</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('multi')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 3: ลดไปกี่ % ── -->
+  <div class="calc-panel" id="panel-howmuch">
+    <span class="field-label">ราคาเต็ม (ก่อนลด)</span>
+    <div class="input-wrap">
+      <input type="number" id="h-original" placeholder="เช่น 500" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <span class="field-label">ราคาหลังลด</span>
+    <div class="input-wrap">
+      <input type="number" id="h-discounted" placeholder="เช่น 350" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <p class="hint">ตัวอย่าง: ราคาเต็ม 500 บาท เหลือ 350 บาท ลดไปกี่ %</p>
+    <button class="btn-calc" onclick="calcHowMuch()">คำนวณ</button>
+
+    <div class="result-box" id="res-howmuch">
+      <div class="result-main">
+        <div class="result-label">ลดไป</div>
+        <div>
+          <span class="result-num" id="h-pct">–</span>
+          <span class="result-unit">%</span>
+        </div>
+        <div class="result-detail" id="h-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="h-saved">–</div>
+          <div class="stat-label">ประหยัดได้ (บาท)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="h-discounted-show">–</div>
+          <div class="stat-label">ราคาหลังลด (บาท)</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('howmuch')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <!-- ── Panel 4: ราคาเต็มคือเท่าไหร่ ── -->
+  <div class="calc-panel" id="panel-original">
+    <span class="field-label">ราคาหลังลดแล้ว</span>
+    <div class="input-wrap">
+      <input type="number" id="o-price" placeholder="เช่น 700" min="0" inputmode="decimal">
+      <span class="input-suffix">บาท</span>
+    </div>
+    <span class="field-label">ส่วนลดที่ได้รับ</span>
+    <div class="input-wrap">
+      <input type="number" id="o-pct" placeholder="เช่น 30" min="0" max="99" inputmode="decimal">
+      <span class="input-suffix">%</span>
+    </div>
+    <p class="hint">ตัวอย่าง: ราคาหลังลด 30% คือ 700 บาท ราคาเต็มคือเท่าไหร่</p>
+    <button class="btn-calc" onclick="calcOriginal()">คำนวณ</button>
+
+    <div class="result-box" id="res-original">
+      <div class="result-main">
+        <div class="result-label">ราคาเต็มก่อนลด</div>
+        <div>
+          <span class="result-num" id="o-original">–</span>
+          <span class="result-unit">บาท</span>
+        </div>
+        <div class="result-detail" id="o-detail"></div>
+      </div>
+      <div class="stats-row">
+        <div class="stat-cell">
+          <div class="stat-num" id="o-saved">–</div>
+          <div class="stat-label">ส่วนลดที่ได้ (บาท)</div>
+        </div>
+        <div class="stat-cell">
+          <div class="stat-num" id="o-pct-show">–</div>
+          <div class="stat-label">ส่วนลด</div>
+        </div>
+      </div>
+      <button class="btn-share" onclick="copyResult('original')">📋 คัดลอกผลลัพธ์</button>
+    </div>
+  </div>
+
+  <div class="ad-mid">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (In-content)</div>
+  </div>
+
+  <div class="info-section">
+    <h2>วิธีใช้เครื่องคิดส่วนลด</h2>
+    <p>เลือกสูตรที่ต้องการด้านบน กรอกตัวเลขแล้วกดคำนวณ รองรับ 4 สูตร ได้แก่ คิดราคาหลังลด ลดหลายชั้น คิดว่าลดไปกี่ % และหาราคาเต็มจากราคาลดแล้ว</p>
+    <h2 class="mt">ลดหลายชั้นคืออะไร</h2>
+    <p>การลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ได้แปลว่าลดรวม 30% เพราะ 10% ที่สองคิดจากราคาหลังลด 20% แล้ว ทำให้ลดรวมจริงๆ ได้น้อยกว่า 30% ครับ</p>
+  </div>
+
+  <div class="ad-mid" style="margin-bottom:0;">
+    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Bottom)</div>
+  </div>
+
+</div>
+
+<footer>
+  <p>© 2568 คิดส่วนลดออนไลน์ · <a href="#">นโยบายความเป็นส่วนตัว</a> · <a href="#">ติดต่อ</a></p>
+  <p style="margin-top:4px;">ผลลัพธ์เป็นการคำนวณทางคณิตศาสตร์</p>
+</footer>
+
+<div class="toast" id="toast">คัดลอกแล้ว!</div>
+
+<script>
+const TYPES = ['basic','multi','howmuch','original'];
+let activeType = 'basic';
+
+function fmt(n) { return parseFloat(n.toFixed(2)).toLocaleString('th-TH'); }
+
+function switchType(type) {
+  activeType = type;
+  document.querySelectorAll('.type-tab').forEach(btn => {
+    btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${type}'`));
+  });
+  TYPES.forEach(t => {
+    document.getElementById('panel-' + t).classList.toggle('active', t === type);
+    const res = document.getElementById('res-' + t);
+    if (res) res.style.display = 'none';
+  });
+}
+
+function show(id) {
+  const el = document.getElementById(id);
+  el.style.display = 'block';
+  requestAnimationFrame(() => el.scrollIntoView({ behavior:'smooth', block:'nearest' }));
+}
+
+/* ── 1. ลด % เหลือเท่าไหร่ ── */
+function calcBasic() {
+  const price = parseFloat(document.getElementById('b-price').value);
+  const pct   = parseFloat(document.getElementById('b-pct').value);
+  if (!price || isNaN(pct)) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const saved = price * pct / 100;
+  const final = price - saved;
+  document.getElementById('b-final').textContent   = fmt(final);
+  document.getElementById('b-saved').textContent   = fmt(saved);
+  document.getElementById('b-pct-show').textContent = fmt(pct) + '%';
+  document.getElementById('b-detail').innerHTML    = `ราคาเต็ม <strong>${fmt(price)}</strong> บาท ลด <strong>${fmt(pct)}%</strong>`;
+  show('res-basic');
+}
+
+/* ── 2. ลดหลายชั้น ── */
+function calcMulti() {
+  const price = parseFloat(document.getElementById('m-price').value);
+  const p1    = parseFloat(document.getElementById('m-p1').value) || 0;
+  const p2    = parseFloat(document.getElementById('m-p2').value) || 0;
+  const p3    = parseFloat(document.getElementById('m-p3').value) || 0;
+  if (!price || !p1) { alert('กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1'); return; }
+  let current = price;
+  if (p1) current = current * (1 - p1 / 100);
+  if (p2) current = current * (1 - p2 / 100);
+  if (p3) current = current * (1 - p3 / 100);
+  const saved    = price - current;
+  const totalPct = (saved / price) * 100;
+  document.getElementById('m-final').textContent     = fmt(current);
+  document.getElementById('m-saved').textContent     = fmt(saved);
+  document.getElementById('m-total-pct').textContent = fmt(totalPct) + '%';
+  const steps = [p1, p2, p3].filter(p => p > 0).map(p => p + '%').join(' + ');
+  document.getElementById('m-detail').innerHTML = `ลด ${steps} รวมจริงๆ <strong>${fmt(totalPct)}%</strong>`;
+  show('res-multi');
+}
+
+/* ── 3. ลดไปกี่ % ── */
+function calcHowMuch() {
+  const original   = parseFloat(document.getElementById('h-original').value);
+  const discounted = parseFloat(document.getElementById('h-discounted').value);
+  if (!original || !discounted) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  if (discounted > original) { alert('ราคาหลังลดต้องน้อยกว่าราคาเต็ม'); return; }
+  const saved = original - discounted;
+  const pct   = (saved / original) * 100;
+  document.getElementById('h-pct').textContent            = fmt(pct);
+  document.getElementById('h-saved').textContent          = fmt(saved);
+  document.getElementById('h-discounted-show').textContent = fmt(discounted);
+  document.getElementById('h-detail').innerHTML = `จาก <strong>${fmt(original)}</strong> บาท เหลือ <strong>${fmt(discounted)}</strong> บาท`;
+  show('res-howmuch');
+}
+
+/* ── 4. ราคาเต็มคือเท่าไหร่ ── */
+function calcOriginal() {
+  const price = parseFloat(document.getElementById('o-price').value);
+  const pct   = parseFloat(document.getElementById('o-pct').value);
+  if (!price || isNaN(pct) || pct >= 100) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
+  const original = price / (1 - pct / 100);
+  const saved    = original - price;
+  document.getElementById('o-original').textContent = fmt(original);
+  document.getElementById('o-saved').textContent    = fmt(saved);
+  document.getElementById('o-pct-show').textContent = fmt(pct) + '%';
+  document.getElementById('o-detail').innerHTML     = `ราคาหลังลด <strong>${fmt(pct)}%</strong> คือ <strong>${fmt(price)}</strong> บาท`;
+  show('res-original');
+}
+
+/* ── Copy ── */
+function copyResult(type) {
+  let text = '';
+  if (type === 'basic') {
+    text = `คิดส่วนลด\nราคาเต็ม ${document.getElementById('b-price').value} บาท ลด ${document.getElementById('b-pct').value}%\nราคาหลังลด ${document.getElementById('b-final').textContent} บาท\nประหยัด ${document.getElementById('b-saved').textContent} บาท`;
+  } else if (type === 'multi') {
+    text = `คิดส่วนลดหลายชั้น\n${document.getElementById('m-detail').textContent}\nราคาหลังลด ${document.getElementById('m-final').textContent} บาท\nประหยัดรวม ${document.getElementById('m-saved').textContent} บาท`;
+  } else if (type === 'howmuch') {
+    text = `ลดไปกี่ %\n${document.getElementById('h-detail').textContent}\nลดไป ${document.getElementById('h-pct').textContent}% (${document.getElementById('h-saved').textContent} บาท)`;
+  } else if (type === 'original') {
+    text = `หาราคาเต็ม\n${document.getElementById('o-detail').textContent}\nราคาเต็มคือ ${document.getElementById('o-original').textContent} บาท`;
+  }
+  text += '\nคิดได้ที่ kidsunlod.com';
+  navigator.clipboard.writeText(text).then(showToast).catch(() => {
+    const ta = document.createElement('textarea');
+    ta.value = text; document.body.appendChild(ta);
+    ta.select(); document.execCommand('copy');
+    document.body.removeChild(ta); showToast();
+  });
+}
+
+function showToast() {
+  const t = document.getElementById('toast');
+  t.classList.add('show');
+  setTimeout(() => t.classList.remove('show'), 2500);
+}
+</script>
+</body>
+</html>
