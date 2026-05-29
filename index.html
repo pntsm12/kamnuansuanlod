@@ -2,561 +2,440 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>คิดส่วนลดออนไลน์</title>
-<meta name="description" content="คิดส่วนลดออนไลน์ฟรี ลด % เหลือเท่าไหร่ ลดหลายชั้น คิดว่าลดกี่ % และหาราคาเต็มจากราคาลดแล้ว ใช้งานง่าย ไม่ต้องโหลดแอป">
-<meta name="keywords" content="คิดส่วนลด, ส่วนลด, ลดราคา, ราคาหลังลด, ลดกี่เปอร์เซ็นต์, คำนวณส่วนลด">
-<meta property="og:title" content="คิดส่วนลดออนไลน์">
-<meta property="og:description" content="คิดส่วนลดออนไลน์ฟรี ลด % เหลือเท่าไหร่ ลดหลายชั้น และอีกหลายสูตร">
+<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4">
+<title>คิดส่วนลดออนไลน์ — ลดหลายชั้น หาราคาเต็ม คิดว่าลดกี่เปอร์เซ็นต์</title>
+<meta name="description" content="คิดส่วนลดออนไลน์ฟรี รองรับ 4 สูตร ลด % เหลือเท่าไหร่ ลดหลายชั้น คิดว่าลดกี่ % และหาราคาเต็มจากราคาลดแล้ว ใช้งานได้ทันที">
+<meta name="keywords" content="คิดส่วนลด, ส่วนลด, ลดราคา, ราคาหลังลด, ลดหลายชั้น, คำนวณส่วนลด">
+<meta name="robots" content="index, follow">
+<link rel="canonical" href="https://pntsm12.github.io/kamnuansuanlod/">
 <meta property="og:type" content="website">
-<link rel="canonical" href="https://kidsunlod.com/">
-<link rel="icon" href="favicon.ico" type="image/x-icon">
-<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<meta property="og:title" content="คิดส่วนลดออนไลน์ — ลดหลายชั้น หาราคาเต็ม">
+<meta property="og:description" content="คิดส่วนลดออนไลน์ฟรี 4 สูตร ใช้งานได้ทันที">
+<meta property="og:url" content="https://pntsm12.github.io/kamnuansuanlod/">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="คำนวณ">
+
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
+    {"@type":"WebApplication","name":"คิดส่วนลดออนไลน์","url":"https://pntsm12.github.io/kamnuansuanlod/","description":"เครื่องมือคิดส่วนลดออนไลน์ฟรี รองรับ 4 สูตร","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"THB"},"inLanguage":"th","isAccessibleForFree":true},
+    {"@type":"FAQPage","mainEntity":[
+      {"@type":"Question","name":"ลดหลายชั้นคืออะไร คำนวณยังไง","acceptedAnswer":{"@type":"Answer","text":"ลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่คือ ลด 20% ก่อน แล้วค่อยลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ 28% เท่านั้น"}},
+      {"@type":"Question","name":"จะรู้ได้ยังไงว่าสินค้าลดไปกี่เปอร์เซ็นต์","acceptedAnswer":{"@type":"Answer","text":"% ส่วนลด = (ราคาเต็ม - ราคาลดแล้ว) / ราคาเต็ม × 100 เช่น ราคาเต็ม 500 บาท ราคาขาย 350 บาท ลดไป (500-350)/500×100 = 30%"}},
+      {"@type":"Question","name":"หาราคาเต็มจากราคาลดแล้วทำยังไง","acceptedAnswer":{"@type":"Answer","text":"ราคาเต็ม = ราคาลดแล้ว / (1 - ส่วนลด/100) เช่น ราคาหลังลด 20% เหลือ 400 บาท ราคาเต็ม = 400 / 0.8 = 500 บาท"}},
+      {"@type":"Question","name":"ลด 2 ต่อ 20+10 กับ 30% ต่างกันไหม","acceptedAnswer":{"@type":"Answer","text":"ต่างกันครับ ลด 20+10 รวมจริงได้ 28% ส่วนลด 30% จะได้ราคาถูกกว่า เพราะ 30% คิดจากราคาเต็มทั้งหมด"}}
+    ]}
+  ]
+}
+</script>
+
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1063556443578237" crossorigin="anonymous"></script>
+<link rel="icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Sarabun:wght@300;400;500;600;700&family=Noto+Serif+Thai:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@700&family=Sarabun:wght@400;500;600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@700&family=Sarabun:wght@400;500;600&display=swap">
 <style>
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-:root {
-  --bg:#FFFFFF; --bg2:#F7F7F5; --bg3:#F0EFEC;
-  --border:#E4E4E0; --border2:#D4D4CF;
-  --text:#1A1917; --text2:#706F6B; --text3:#B0AFA9;
-  --ink:#1A1917; --accent:#2563EB;
-  --header-bg:rgba(255,255,255,0.92); --logo-fill:#1A1917;
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+:root{
+  --bg:#F8F8F7;--s0:#FFFFFF;--s1:#F2F1EE;--s2:#ECEAE6;
+  --b0:rgba(0,0,0,0.07);--b1:rgba(0,0,0,0.13);
+  --t0:#18181A;--t1:#4A4946;--t2:#7A7872;
+  --ink:#18181A;--inv:#FFFFFF;--r:8px;--r-lg:12px;
 }
-[data-theme="dark"] {
-  --bg:#0F0F0F; --bg2:#1A1A1A; --bg3:#222222;
-  --border:#2A2A2A; --border2:#333333;
-  --text:#F0EFE8; --text2:#9A9890; --text3:#555450;
-  --ink:#F0EFE8; --accent:#60A5FA;
-  --header-bg:rgba(15,15,15,0.92); --logo-fill:#F0EFE8;
+[data-theme="dark"]{
+  --bg:#111110;--s0:#1C1C1A;--s1:#242422;--s2:#2C2B28;
+  --b0:rgba(255,255,255,0.07);--b1:rgba(255,255,255,0.13);
+  --t0:#EDEAE2;--t1:#A8A49C;--t2:#68655E;--ink:#EDEAE2;--inv:#111110;
 }
-html { scroll-behavior:smooth; }
-body { font-family:'Sarabun',sans-serif; background:var(--bg); color:var(--text); min-height:100vh; line-height:1.6; -webkit-font-smoothing:antialiased; transition:background .3s,color .3s; }
-
-header { position:sticky; top:0; z-index:100; background:var(--header-bg); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); border-bottom:1px solid var(--border); height:56px; display:flex; align-items:center; padding:0 20px; gap:10px; }
-.header-logo { display:flex; align-items:center; gap:10px; text-decoration:none; flex:1; }
-.logo-icon svg { width:32px; height:32px; display:block; }
-.logo-text { display:flex; flex-direction:column; line-height:1.1; }
-.logo-text-th { font-family:'Noto Serif Thai',serif; font-size:16px; font-weight:700; color:var(--text); }
-.logo-text-en { font-size:10px; font-weight:500; color:var(--text3); letter-spacing:1.5px; text-transform:uppercase; }
-.dark-toggle { width:36px; height:36px; border:1.5px solid var(--border); border-radius:50%; background:transparent; cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .2s; color:var(--text2); flex-shrink:0; }
-.dark-toggle:hover { border-color:var(--border2); color:var(--text); }
-
-.ad-strip { background:var(--bg2); border-bottom:1px solid var(--border); display:flex; justify-content:center; padding:8px 16px; }
-.ad-728 { width:100%; max-width:728px; height:90px; background:var(--bg); border:1.5px dashed var(--border2); border-radius:4px; display:flex; align-items:center; justify-content:center; color:var(--text3); font-size:12px; }
+:focus-visible{outline:2px solid #2563EB;outline-offset:2px;border-radius:4px;}
+:focus:not(:focus-visible){outline:none;}
+.skip-link{position:absolute;top:-100%;left:16px;background:var(--ink);color:var(--inv);padding:8px 16px;border-radius:0 0 var(--r) var(--r);font-size:13px;font-weight:600;text-decoration:none;z-index:999;transition:top .15s;}
+.skip-link:focus{top:0;}
+html{scroll-behavior:smooth;}
+body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s;}
+header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 20px;gap:12px;border-bottom:1px solid var(--b0);background:rgba(248,248,247,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
+[data-theme="dark"] header{background:rgba(17,17,16,0.92);}
+.logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex:1;}
+.logo svg{width:30px;height:30px;display:block;flex-shrink:0;}
+.logo-t{display:flex;flex-direction:column;line-height:1.1;}
+.logo-th{font-family:'Noto Serif Thai',serif;font-size:15px;font-weight:700;color:var(--t0);}
+.logo-en{font-size:9px;font-weight:600;color:var(--t2);letter-spacing:2px;}
+.hdr-right{display:flex;align-items:center;gap:8px;}
+.back-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid var(--b0);border-radius:20px;font-family:'Sarabun',sans-serif;font-size:12px;color:var(--t1);text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap;}
+.back-btn:hover{border-color:var(--b1);color:var(--t0);}
+.back-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.dark-btn{width:32px;height:32px;border:1px solid var(--b0);border-radius:6px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--t1);transition:all .15s;}
+.dark-btn:hover{border-color:var(--b1);color:var(--t0);background:var(--s1);}
+.dark-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.ad-bar{display:flex;justify-content:center;padding:8px 16px;background:var(--s1);border-bottom:1px solid var(--b0);}
+.ad-728{width:100%;max-width:728px;height:90px;background:var(--s0);border:1px dashed var(--b1);border-radius:6px;display:flex;align-items:center;justify-content:center;color:var(--t2);font-size:12px;}
 @media(max-width:600px){.ad-728{height:60px;}}
-.ad-mid { display:flex; justify-content:center; margin:28px 0; }
+.page{max-width:600px;margin:0 auto;padding:28px 20px 72px;}
+.page-hd{margin-bottom:20px;}
+.page-hd h1{font-family:'Noto Serif Thai',serif;font-size:clamp(22px,4vw,30px);font-weight:700;color:var(--t0);line-height:1.1;letter-spacing:-.3px;white-space:nowrap;}
+@media(max-width:380px){.page-hd h1{white-space:normal;font-size:22px;}}
+.page-hd p{margin-top:6px;font-size:14px;color:var(--t1);line-height:1.6;}
 
-.page-wrap { max-width:640px; margin:0 auto; padding:40px 20px 64px; }
-.page-heading { margin-bottom:28px; }
-.page-heading h1 { font-family:'Noto Serif Thai',serif; font-size:clamp(32px,7vw,48px); font-weight:700; color:var(--ink); line-height:1.15; letter-spacing:-0.8px; }
-.page-heading p { margin-top:8px; font-size:15px; color:var(--text2); }
+/* Mode tabs */
+.mode-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:14px;}
+.m-tab{padding:9px 4px;border:1px solid var(--b0);border-radius:var(--r);background:var(--s0);font-family:'Sarabun',sans-serif;font-size:12px;font-weight:500;color:var(--t1);cursor:pointer;transition:all .15s;text-align:center;line-height:1.4;}
+.m-tab:hover{border-color:var(--b1);color:var(--t0);}
+.m-tab.on{background:var(--ink);border-color:var(--ink);color:var(--inv);}
 
-/* Tabs */
-.type-tabs-2 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; }
-.type-tabs-4 { display:grid; grid-template-columns:1fr 1fr; gap:8px; margin-bottom:24px; }
-.type-tab { padding:10px 6px; border:1.5px solid var(--border); border-radius:9px; background:var(--bg); font-family:'Sarabun',sans-serif; font-size:14px; font-weight:600; color:var(--text2); cursor:pointer; text-align:center; transition:all .15s; line-height:1.4; }
-.type-tab.active { border-color:var(--ink); background:var(--ink); color:var(--bg); }
-.type-tab:hover:not(.active) { border-color:var(--border2); }
-
-.field-label { font-size:13px; font-weight:600; color:var(--text2); letter-spacing:0.3px; margin-bottom:8px; display:block; }
-.hint { font-size:13px; color:var(--text3); margin-bottom:12px; }
-
-.input-wrap { display:flex; align-items:center; border:1.5px solid var(--border); border-radius:8px; overflow:hidden; background:var(--bg); transition:border-color .15s,box-shadow .15s; margin-bottom:12px; }
-.input-wrap:focus-within { border-color:var(--accent); box-shadow:0 0 0 3px rgba(37,99,235,0.1); }
-.input-wrap input { flex:1; padding:11px 14px; border:none; outline:none; font-family:'Sarabun',sans-serif; font-size:20px; font-weight:600; color:var(--ink); background:transparent; width:100%; }
-.input-wrap input::placeholder { color:var(--text3); font-weight:400; font-size:15px; }
-.input-suffix { padding:0 14px; font-size:14px; font-weight:600; color:var(--text3); border-left:1px solid var(--border); background:var(--bg2); min-height:46px; display:flex; align-items:center; }
-
-.calc-panel { display:none; }
-.calc-panel.active { display:block; }
-
-.btn-calc { width:100%; margin-top:4px; padding:13px; background:var(--ink); color:var(--bg); border:none; border-radius:9px; font-family:'Sarabun',sans-serif; font-size:15px; font-weight:600; cursor:pointer; transition:opacity .15s,transform .1s; }
-.btn-calc:hover { opacity:0.85; }
-.btn-calc:active { transform:scale(0.99); }
+/* Card */
+.card{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px;}
+.card-body{padding:16px 18px;}
+.field{margin-bottom:14px;}
+.field:last-child{margin-bottom:0;}
+.lbl{font-size:13px;font-weight:600;color:var(--t0);margin-bottom:6px;display:block;}
+.hint{font-size:13px;color:var(--t1);margin-top:4px;}
+.inp-row{display:flex;align-items:center;border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;background:var(--s0);transition:border-color .15s,box-shadow .15s;}
+.inp-row:focus-within{border-color:var(--b1);box-shadow:0 0 0 3px rgba(0,0,0,0.04);}
+[data-theme="dark"] .inp-row:focus-within{box-shadow:0 0 0 3px rgba(255,255,255,0.04);}
+.inp-suf{padding:0 11px;font-size:13px;color:var(--t2);background:var(--s1);height:40px;display:flex;align-items:center;border-left:1px solid var(--b0);flex-shrink:0;white-space:nowrap;}
+.inp-row input{flex:1;height:40px;border:none;background:transparent;padding:0 11px;font-family:'Sarabun',sans-serif;font-size:16px;color:var(--t0);outline:none;min-width:0;}
+.inp-row input::placeholder{color:var(--t2);}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
+@media(max-width:420px){.grid2{grid-template-columns:1fr;}}
+.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
+@media(max-width:420px){.grid3{grid-template-columns:1fr;}}
+.btn-calc{width:100%;height:44px;background:var(--ink);color:var(--inv);border:none;border-radius:var(--r);font-family:'Sarabun',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s;margin-top:4px;}
+.btn-calc:hover{opacity:.87;}
 
 /* Result */
-.result-box { display:none; margin-top:20px; animation:fadeUp .3s ease; }
-@keyframes fadeUp { from{opacity:0;transform:translateY(8px);}to{opacity:1;transform:translateY(0);} }
+.result-box{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;margin-top:10px;display:none;}
+.result-top{padding:18px 20px;border-bottom:1px solid var(--b0);text-align:center;}
+.result-lbl{font-size:11px;font-weight:600;color:var(--t2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
+.result-num{font-family:'Noto Serif Thai',serif;font-size:clamp(36px,8vw,52px);font-weight:700;color:var(--t0);line-height:1;}
+.result-unit{font-size:15px;color:var(--t1);margin-left:4px;}
+.result-sub{font-size:13px;color:var(--t1);margin-top:6px;}
+.result-body{padding:14px 20px;}
+.bd-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--b0);font-size:13px;}
+.bd-row:last-child{border-bottom:none;}
+.bd-lbl{color:var(--t1);}
+.bd-val{font-weight:600;color:var(--t0);}
+.bd-val.green{color:#16A34A;}
+.bd-val.red{color:#DC2626;}
 
-.result-main { padding:24px 0 20px; border-top:1.5px solid var(--border); border-bottom:1.5px solid var(--border); margin-bottom:16px; }
-.result-label { font-size:12px; font-weight:600; letter-spacing:1.2px; text-transform:uppercase; color:var(--text3); margin-bottom:6px; }
-.result-num { font-family:'Noto Serif Thai',serif; font-size:clamp(52px,13vw,80px); font-weight:700; color:var(--ink); line-height:1; letter-spacing:-2px; }
-.result-unit { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:400; color:var(--text2); margin-left:6px; vertical-align:bottom; display:inline-block; margin-bottom:6px; }
-.result-detail { font-size:15px; color:var(--text2); margin-top:10px; }
-.result-detail strong { color:var(--ink); font-weight:600; }
+/* History */
+.hist-wrap{margin-top:14px;}
+.hist-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
+.hist-lbl{font-size:12px;font-weight:600;color:var(--t1);}
+.hist-clr{font-size:12px;color:var(--t2);background:none;border:none;cursor:pointer;font-family:'Sarabun',sans-serif;padding:0;}
+.hist-clr:hover{color:var(--t1);}
+.hist-list{display:flex;flex-direction:column;gap:5px;}
+.h-item{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r);padding:9px 13px;}
+.h-main{font-size:15px;font-weight:600;color:var(--t0);}
+.h-sub{font-size:11px;color:var(--t2);margin-top:2px;}
+.h-empty{font-size:13px;color:var(--t2);padding:12px;text-align:center;}
 
-.stats-row { display:grid; grid-template-columns:1fr 1fr; gap:1px; background:var(--border); border:1.5px solid var(--border); border-radius:10px; overflow:hidden; margin-bottom:12px; }
-.stat-cell { background:var(--bg); padding:16px; text-align:center; }
-.stat-num { font-family:'Noto Serif Thai',serif; font-size:22px; font-weight:700; color:var(--ink); letter-spacing:-0.5px; }
-.stat-label { font-size:12px; color:var(--text3); margin-top:3px; }
+/* FAQ */
+.faq-wrap{margin-top:28px;border-top:1px solid var(--b0);padding-top:24px;}
+.faq-h2{font-family:'Noto Serif Thai',serif;font-size:18px;font-weight:700;color:var(--t0);margin-bottom:14px;}
+.faq-item{border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;margin-bottom:8px;}
+.faq-q{width:100%;padding:13px 16px;background:var(--s0);border:none;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:500;color:var(--t0);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .15s;}
+.faq-q:hover{background:var(--s1);}
+.faq-q svg{width:14px;height:14px;stroke:var(--t2);stroke-width:2;fill:none;stroke-linecap:round;flex-shrink:0;transition:transform .2s;}
+.faq-q[aria-expanded="true"] svg{transform:rotate(180deg);}
+.faq-a{padding:0 16px;font-size:13px;color:var(--t1);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .25s ease,padding .25s ease;}
+.faq-a.open{max-height:300px;padding:0 16px 14px;}
 
-.btn-share { width:100%; padding:12px; background:transparent; border:1.5px solid var(--border); border-radius:9px; font-family:'Sarabun',sans-serif; font-size:14px; color:var(--text2); cursor:pointer; margin-bottom:12px; display:flex; align-items:center; justify-content:center; gap:8px; transition:all .15s; }
-.btn-share:hover { border-color:var(--ink); color:var(--ink); }
-
-.toast { position:fixed; bottom:24px; left:50%; transform:translateX(-50%) translateY(80px); background:var(--ink); color:var(--bg); padding:10px 20px; border-radius:8px; font-size:14px; font-weight:500; transition:transform .3s ease; z-index:999; pointer-events:none; }
-.toast.show { transform:translateX(-50%) translateY(0); }
-
-.info-section { border-top:1px solid var(--border); padding-top:32px; }
-.info-section h2 { font-family:'Noto Serif Thai',serif; font-size:18px; font-weight:700; color:var(--ink); margin-bottom:8px; }
-.info-section h2.mt { margin-top:24px; }
-.info-section p { font-size:14px; color:var(--text2); line-height:1.85; }
-
-footer { border-top:1px solid var(--border); padding:24px 20px; text-align:center; font-size:13px; color:var(--text3); }
-footer a { color:var(--text3); text-decoration:none; }
-footer a:hover { color:var(--text2); text-decoration:underline; }
-
-.share-row { display:grid; grid-template-columns:1fr 1fr 1fr; gap:8px; margin-bottom:12px; }
-.btn-share-action { padding:11px 8px; border-radius:9px; border:1.5px solid var(--border); background:transparent; font-family:'Sarabun',sans-serif; font-size:13px; font-weight:600; color:var(--text2); cursor:pointer; display:flex; align-items:center; justify-content:center; transition:all .15s; }
-.btn-share-action:hover { border-color:var(--border2); color:var(--text); }
-.history-section { margin-top:32px; border-top:1px solid var(--border); padding-top:24px; }
-.history-header { display:flex; align-items:center; justify-content:space-between; margin-bottom:14px; }
-.history-title { font-size:13px; font-weight:600; color:var(--text2); }
-.btn-clear-history { font-size:12px; color:var(--text3); background:none; border:none; cursor:pointer; font-family:'Sarabun',sans-serif; }
-.btn-clear-history:hover { color:var(--text2); }
-.history-list { display:flex; flex-direction:column; gap:8px; }
-.history-item { background:var(--bg2); border:1.5px solid var(--border); border-radius:9px; padding:12px 16px; display:flex; align-items:center; justify-content:space-between; }
-.history-item-left { flex:1; }
-.history-item-result { font-family:'Noto Serif Thai',serif; font-size:18px; font-weight:700; color:var(--text); line-height:1.2; }
-.history-item-detail { font-size:12px; color:var(--text3); margin-top:2px; }
-.history-item-right { font-size:12px; color:var(--text3); }
-.history-empty { font-size:14px; color:var(--text3); text-align:center; padding:16px 0; }
+/* Related */
+.related-wrap{margin-top:20px;border-top:1px solid var(--b0);padding-top:20px;}
+.related-lbl{font-size:11px;font-weight:600;color:var(--t2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;}
+.related-card{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--s0);border:1px solid var(--b0);border-radius:var(--r);text-decoration:none;color:var(--t0);transition:border-color .14s,background .14s;}
+.related-card:hover{border-color:var(--b1);background:var(--s1);}
+.related-ico{width:28px;height:28px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.related-ico svg{width:12px;height:12px;stroke:var(--inv);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.related-name{font-size:12px;font-weight:500;}
+footer{border-top:1px solid var(--b0);padding:20px;text-align:center;font-size:12px;color:var(--t2);}
+footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
+@media(max-width:480px){header,.page{padding-left:16px;padding-right:16px;}}
 </style>
 </head>
 <body>
-
-<header>
-  <a class="header-logo" href="/">
-    <div class="logo-icon">
-      <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
-        <rect width="32" height="32" rx="7" fill="var(--logo-fill)"/>
-        <text x="5" y="24" font-family="Arial Black, sans-serif" font-size="22" font-weight="900" fill="var(--bg)">K</text>
-        <text x="14" y="27" font-family="Arial, sans-serif" font-size="8" font-weight="700" fill="var(--bg)">+×=</text>
-      </svg>
-    </div>
-    <div class="logo-text">
-      <span class="logo-text-th">คำนวณ</span>
-      <span class="logo-text-en">KAMNUAN</span>
-    </div>
+<a class="skip-link" href="#main-content">ข้ามไปเนื้อหาหลัก</a>
+<header role="banner">
+  <a class="logo" href="/" aria-label="คำนวณ หน้าหลัก">
+    <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect width="30" height="30" rx="6" fill="var(--ink)"/><text x="4" y="22" font-family="Arial Black,sans-serif" font-size="20" font-weight="900" fill="var(--inv)">K</text><text x="13" y="25" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="var(--inv)">+x=</text></svg>
+    <div class="logo-t"><span class="logo-th">คำนวณ</span><span class="logo-en">KAMNUAN</span></div>
   </a>
-  <button class="dark-toggle" onclick="toggleDark()" title="เปลี่ยนธีม">
-    <svg id="iconSun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none">
-      <circle cx="12" cy="12" r="5"/><line x1="12" y1="1" x2="12" y2="3"/><line x1="12" y1="21" x2="12" y2="23"/>
-      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"/><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"/>
-      <line x1="1" y1="12" x2="3" y2="12"/><line x1="21" y1="12" x2="23" y2="12"/>
-      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"/><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"/>
-    </svg>
-    <svg id="iconMoon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-      <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/>
-    </svg>
-  </button>
+  <div class="hdr-right">
+    <a class="back-btn" href="/" aria-label="กลับไปดูเครื่องมือทั้งหมด"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>เครื่องมือทั้งหมด</a>
+    <button class="dark-btn" id="darkBtn" onclick="toggleDark()" aria-label="สลับโหมดสีเข้ม/สว่าง" type="button">
+      <svg id="iSun" style="display:none" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
+      <svg id="iMoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
+    </button>
+  </div>
 </header>
 
-<div class="ad-strip">
-  <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Top)</div>
+<div class="ad-bar" role="complementary" aria-label="โฆษณา">
+  <div class="ad-728">
+    <ins class="adsbygoogle" style="display:block" data-ad-client="ca-pub-1063556443578237" data-ad-slot="auto" data-ad-format="auto" data-full-width-responsive="true"></ins>
+    <script>(adsbygoogle=window.adsbygoogle||[]).push({});</script>
+  </div>
 </div>
 
-<div class="page-wrap">
-
-  <div class="page-heading">
+<main id="main-content" class="page">
+  <div class="page-hd">
     <h1>คิดส่วนลด</h1>
-    <p>เลือกสูตรที่ต้องการ กรอกตัวเลข รู้ผลทันที</p>
+    <p>คำนวณส่วนลด 4 รูปแบบ รู้ราคาหลังลด ประหยัดไปเท่าไหร่<br>รองรับลดหลายชั้น และย้อนหาราคาเต็มจากราคาลดแล้ว</p>
   </div>
 
-  <div class="type-tabs-4">
-    <button class="type-tab active" onclick="switchType('basic')">คิดราคาหลังลด</button>
-    <button class="type-tab" onclick="switchType('multi')">ลดหลายชั้น</button>
-    <button class="type-tab" onclick="switchType('howmuch')">ลดไปกี่ %</button>
-    <button class="type-tab" onclick="switchType('original')">คิดราคาเต็มจากราคาลด</button>
+  <div class="mode-tabs" role="tablist" aria-label="สูตรคำนวณ">
+    <button class="m-tab on" id="tab0" onclick="setMode(0)" role="tab" aria-selected="true" type="button">ราคาหลังลด<br>% เท่าไหร่</button>
+    <button class="m-tab" id="tab1" onclick="setMode(1)" role="tab" aria-selected="false" type="button">ลด<br>หลายชั้น</button>
+    <button class="m-tab" id="tab2" onclick="setMode(2)" role="tab" aria-selected="false" type="button">ลดไปกี่<br>เปอร์เซ็นต์</button>
+    <button class="m-tab" id="tab3" onclick="setMode(3)" role="tab" aria-selected="false" type="button">ราคาเต็ม<br>เดิมเท่าไหร่</button>
   </div>
 
-  <!-- ── Panel 1: ลด % เหลือเท่าไหร่ ── -->
-  <div class="calc-panel active" id="panel-basic">
-    <span class="field-label">ราคาเต็ม</span>
-    <div class="input-wrap">
-      <input type="number" id="b-price" placeholder="เช่น 1500" min="0" inputmode="decimal">
-      <span class="input-suffix">บาท</span>
-    </div>
-    <span class="field-label">ส่วนลด</span>
-    <div class="input-wrap">
-      <input type="number" id="b-pct" placeholder="เช่น 30" min="0" max="100" inputmode="decimal">
-      <span class="input-suffix">%</span>
-    </div>
-    <p class="hint">ตัวอย่าง: ราคาเต็ม 1,500 บาท ลด 30% เหลือเท่าไหร่</p>
-    <button class="btn-calc" onclick="calcBasic()">คำนวณ</button>
-
-    <div class="result-box" id="res-basic">
-      <div class="result-main">
-        <div class="result-label">ราคาหลังหักส่วนลด</div>
-        <div>
-          <span class="result-num" id="b-final">–</span>
-          <span class="result-unit">บาท</span>
-        </div>
-        <div class="result-detail" id="b-detail"></div>
+  <!-- Mode 0: ลด % เหลือเท่าไหร่ -->
+  <div id="m0">
+    <div class="card"><div class="card-body">
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="b-price">ราคาเต็ม (บาท)</label><div class="inp-row"><input type="number" id="b-price" placeholder="เช่น 500" inputmode="decimal"></div></div>
+        <div class="field"><label class="lbl" for="b-pct">ส่วนลด (%)</label><div class="inp-row"><input type="number" id="b-pct" placeholder="เช่น 20" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div></div>
       </div>
-      <div class="stats-row">
-        <div class="stat-cell">
-          <div class="stat-num" id="b-saved">–</div>
-          <div class="stat-label">ประหยัดได้ (บาท)</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num" id="b-pct-show">–</div>
-          <div class="stat-label">ส่วนลด</div>
-        </div>
+      <button class="btn-calc" onclick="calcBasic()" type="button">คำนวณ</button>
+    </div></div>
+    <div class="result-box" id="r0">
+      <div class="result-top">
+        <div class="result-lbl">ราคาหลังลด</div>
+        <div><span class="result-num" id="b-final">–</span><span class="result-unit">บาท</span></div>
+        <div class="result-sub" id="b-detail"></div>
       </div>
-      <div class="share-row">
-        <button class="btn-share-action" onclick="shareLineResult(getShareText('basic'), 'https://pntsm12.github.io/kamnuansunlod/')">Line</button>
-        <button class="btn-share-action" onclick="shareFbResult('https://pntsm12.github.io/kamnuansunlod/')">Facebook</button>
-        <button class="btn-share-action" onclick="copyResult('basic')">คัดลอก</button>
+      <div class="result-body">
+        <div class="bd-row"><span class="bd-lbl">ราคาเต็ม</span><span class="bd-val" id="b-price-show">–</span></div>
+        <div class="bd-row"><span class="bd-lbl">ส่วนลด <span id="b-pct-show"></span></span><span class="bd-val red" id="b-saved">–</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ── Panel 2: ลดหลายชั้น ── -->
-  <div class="calc-panel" id="panel-multi">
-    <span class="field-label">ราคาเต็ม</span>
-    <div class="input-wrap">
-      <input type="number" id="m-price" placeholder="เช่น 1000" min="0" inputmode="decimal">
-      <span class="input-suffix">บาท</span>
-    </div>
-    <span class="field-label">ส่วนลดชั้นที่ 1</span>
-    <div class="input-wrap">
-      <input type="number" id="m-p1" placeholder="เช่น 20" min="0" max="100" inputmode="decimal">
-      <span class="input-suffix">%</span>
-    </div>
-    <span class="field-label">ส่วนลดชั้นที่ 2</span>
-    <div class="input-wrap">
-      <input type="number" id="m-p2" placeholder="เช่น 10" min="0" max="100" inputmode="decimal">
-      <span class="input-suffix">%</span>
-    </div>
-    <span class="field-label">ส่วนลดชั้นที่ 3 <span style="color:var(--text3);font-weight:400;">(ถ้ามี)</span></span>
-    <div class="input-wrap">
-      <input type="number" id="m-p3" placeholder="เช่น 5" min="0" max="100" inputmode="decimal">
-      <span class="input-suffix">%</span>
-    </div>
-    <p class="hint">ตัวอย่าง: ราคา 1,000 บาท ลด 20% แล้วลดอีก 10% เหลือเท่าไหร่</p>
-    <button class="btn-calc" onclick="calcMulti()">คำนวณ</button>
-
-    <div class="result-box" id="res-multi">
-      <div class="result-main">
-        <div class="result-label">ราคาหลังหักส่วนลดทุกชั้น</div>
-        <div>
-          <span class="result-num" id="m-final">–</span>
-          <span class="result-unit">บาท</span>
+  <!-- Mode 1: ลดหลายชั้น -->
+  <div id="m1" style="display:none">
+    <div class="card"><div class="card-body">
+      <div class="field"><label class="lbl" for="m-price">ราคาเต็ม (บาท)</label><div class="inp-row"><input type="number" id="m-price" placeholder="เช่น 1,000" inputmode="decimal"></div></div>
+      <div class="field">
+        <label class="lbl">ส่วนลดแต่ละชั้น (%)</label>
+        <div class="grid3">
+          <div class="inp-row"><input type="number" id="m-p1" placeholder="ชั้น 1" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
+          <div class="inp-row"><input type="number" id="m-p2" placeholder="ชั้น 2" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
+          <div class="inp-row"><input type="number" id="m-p3" placeholder="ชั้น 3" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
         </div>
-        <div class="result-detail" id="m-detail"></div>
+        <div class="hint">กรอกอย่างน้อย 2 ชั้น ชั้น 3 ไม่บังคับ</div>
       </div>
-      <div class="stats-row">
-        <div class="stat-cell">
-          <div class="stat-num" id="m-saved">–</div>
-          <div class="stat-label">ประหยัดได้รวม (บาท)</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num" id="m-total-pct">–</div>
-          <div class="stat-label">ลดรวมจริงๆ</div>
-        </div>
+      <button class="btn-calc" onclick="calcMulti()" type="button">คำนวณ</button>
+    </div></div>
+    <div class="result-box" id="r1">
+      <div class="result-top">
+        <div class="result-lbl">ราคาหลังลดหลายชั้น</div>
+        <div><span class="result-num" id="m-final">–</span><span class="result-unit">บาท</span></div>
+        <div class="result-sub" id="m-detail"></div>
       </div>
-      <div class="share-row">
-        <button class="btn-share-action" onclick="shareLineResult(getShareText('multi'), 'https://pntsm12.github.io/kamnuansunlod/')">Line</button>
-        <button class="btn-share-action" onclick="shareFbResult('https://pntsm12.github.io/kamnuansunlod/')">Facebook</button>
-        <button class="btn-share-action" onclick="copyResult('multi')">คัดลอก</button>
+      <div class="result-body">
+        <div class="bd-row"><span class="bd-lbl">ส่วนลดรวมจริงๆ</span><span class="bd-val red" id="m-total-pct">–</span></div>
+        <div class="bd-row"><span class="bd-lbl">ประหยัดไป</span><span class="bd-val green" id="m-saved">–</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ── Panel 3: ลดไปกี่ % ── -->
-  <div class="calc-panel" id="panel-howmuch">
-    <span class="field-label">ราคาเต็ม (ก่อนลด)</span>
-    <div class="input-wrap">
-      <input type="number" id="h-original" placeholder="เช่น 500" min="0" inputmode="decimal">
-      <span class="input-suffix">บาท</span>
-    </div>
-    <span class="field-label">ราคาหลังลด</span>
-    <div class="input-wrap">
-      <input type="number" id="h-discounted" placeholder="เช่น 350" min="0" inputmode="decimal">
-      <span class="input-suffix">บาท</span>
-    </div>
-    <p class="hint">ตัวอย่าง: ราคาเต็ม 500 บาท เหลือ 350 บาท ลดไปกี่ %</p>
-    <button class="btn-calc" onclick="calcHowMuch()">คำนวณ</button>
-
-    <div class="result-box" id="res-howmuch">
-      <div class="result-main">
-        <div class="result-label">ลดไป</div>
-        <div>
-          <span class="result-num" id="h-pct">–</span>
-          <span class="result-unit">%</span>
-        </div>
-        <div class="result-detail" id="h-detail"></div>
+  <!-- Mode 2: ลดไปกี่ % -->
+  <div id="m2" style="display:none">
+    <div class="card"><div class="card-body">
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="h-orig">ราคาก่อนลด (บาท)</label><div class="inp-row"><input type="number" id="h-orig" placeholder="เช่น 500" inputmode="decimal"></div></div>
+        <div class="field"><label class="lbl" for="h-sale">ราคาที่ขายจริง (บาท)</label><div class="inp-row"><input type="number" id="h-sale" placeholder="เช่น 350" inputmode="decimal"></div></div>
       </div>
-      <div class="stats-row">
-        <div class="stat-cell">
-          <div class="stat-num" id="h-saved">–</div>
-          <div class="stat-label">ประหยัดได้ (บาท)</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num" id="h-discounted-show">–</div>
-          <div class="stat-label">ราคาหลังลด (บาท)</div>
-        </div>
+      <div class="hint" style="margin-bottom:8px;">ผลลัพธ์จะบอกว่าลดไปกี่ % และประหยัดไปเท่าไหร่</div>
+      <button class="btn-calc" onclick="calcHowMuch()" type="button">คำนวณ</button>
+    </div></div>
+    <div class="result-box" id="r2">
+      <div class="result-top">
+        <div class="result-lbl">ลดไป</div>
+        <div><span class="result-num" id="h-pct">–</span><span class="result-unit">%</span></div>
       </div>
-      <div class="share-row">
-        <button class="btn-share-action" onclick="shareLineResult(getShareText('howmuch'), 'https://pntsm12.github.io/kamnuansunlod/')">Line</button>
-        <button class="btn-share-action" onclick="shareFbResult('https://pntsm12.github.io/kamnuansunlod/')">Facebook</button>
-        <button class="btn-share-action" onclick="copyResult('howmuch')">คัดลอก</button>
+      <div class="result-body">
+        <div class="bd-row"><span class="bd-lbl">ประหยัดไป</span><span class="bd-val green" id="h-saved">–</span></div>
       </div>
     </div>
   </div>
 
-  <!-- ── Panel 4: ราคาเต็มคือเท่าไหร่ ── -->
-  <div class="calc-panel" id="panel-original">
-    <span class="field-label">ราคาหลังลดแล้ว</span>
-    <div class="input-wrap">
-      <input type="number" id="o-price" placeholder="เช่น 700" min="0" inputmode="decimal">
-      <span class="input-suffix">บาท</span>
-    </div>
-    <span class="field-label">ส่วนลดที่ได้รับ</span>
-    <div class="input-wrap">
-      <input type="number" id="o-pct" placeholder="เช่น 30" min="0" max="99" inputmode="decimal">
-      <span class="input-suffix">%</span>
-    </div>
-    <p class="hint">ตัวอย่าง: ราคาหลังลด 30% คือ 700 บาท ราคาเต็มคือเท่าไหร่</p>
-    <button class="btn-calc" onclick="calcOriginal()">คำนวณ</button>
-
-    <div class="result-box" id="res-original">
-      <div class="result-main">
-        <div class="result-label">ราคาเต็มก่อนลด</div>
-        <div>
-          <span class="result-num" id="o-original">–</span>
-          <span class="result-unit">บาท</span>
-        </div>
-        <div class="result-detail" id="o-detail"></div>
+  <!-- Mode 3: หาราคาเต็ม -->
+  <div id="m3" style="display:none">
+    <div class="card"><div class="card-body">
+      <div class="grid2">
+        <div class="field"><label class="lbl" for="o-sale">ราคาลดแล้ว (บาท)</label><div class="inp-row"><input type="number" id="o-sale" placeholder="เช่น 400" inputmode="decimal"></div></div>
+        <div class="field"><label class="lbl" for="o-pct">ส่วนลดที่ใช้ (%)</label><div class="inp-row"><input type="number" id="o-pct" placeholder="เช่น 20" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div></div>
       </div>
-      <div class="stats-row">
-        <div class="stat-cell">
-          <div class="stat-num" id="o-saved">–</div>
-          <div class="stat-label">ส่วนลดที่ได้ (บาท)</div>
-        </div>
-        <div class="stat-cell">
-          <div class="stat-num" id="o-pct-show">–</div>
-          <div class="stat-label">ส่วนลด</div>
-        </div>
+      <button class="btn-calc" onclick="calcOriginal()" type="button">คำนวณ</button>
+    </div></div>
+    <div class="result-box" id="r3">
+      <div class="result-top">
+        <div class="result-lbl">ราคาเต็มก่อนลด</div>
+        <div><span class="result-num" id="o-orig">–</span><span class="result-unit">บาท</span></div>
       </div>
-      <div class="share-row">
-        <button class="btn-share-action" onclick="shareLineResult(getShareText('original'), 'https://pntsm12.github.io/kamnuansunlod/')">Line</button>
-        <button class="btn-share-action" onclick="shareFbResult('https://pntsm12.github.io/kamnuansunlod/')">Facebook</button>
-        <button class="btn-share-action" onclick="copyResult('original')">คัดลอก</button>
+      <div class="result-body">
+        <div class="bd-row"><span class="bd-lbl">ส่วนลดที่หักออก</span><span class="bd-val red" id="o-saved">–</span></div>
       </div>
     </div>
   </div>
 
-  <div class="history-section">
-    <div class="history-header">
-      <span class="history-title">ประวัติการคำนวณ</span>
-      <button class="btn-clear-history" onclick="clearHistory()">ล้างประวัติ</button>
+  <!-- History -->
+  <div class="hist-wrap">
+    <div class="hist-head">
+      <span class="hist-lbl">ประวัติการคำนวณ</span>
+      <button class="hist-clr" onclick="clearHist()" type="button">ล้างประวัติ</button>
     </div>
-    <div class="history-list" id="historyList">
-      <div class="history-empty">ยังไม่มีประวัติการคำนวณ</div>
+    <div class="hist-list" id="histList"><div class="h-empty">ยังไม่มีประวัติ</div></div>
+  </div>
+
+  <!-- FAQ -->
+  <div class="faq-wrap">
+    <h2 class="faq-h2">คำถามที่พบบ่อย</h2>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลดหลายชั้นคืออะไร คำนวณยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่คือ ลด 20% ก่อน แล้วค่อยลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ <strong>28%</strong> เท่านั้น</div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">จะรู้ได้ยังไงว่าสินค้าลดไปกี่ %?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">% ส่วนลด = (ราคาเต็ม − ราคาขาย) / ราคาเต็ม × 100 เช่น ราคาเต็ม 500 ขาย 350 = (500−350)/500×100 = <strong>30%</strong></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">หาราคาเต็มจากราคาลดแล้วทำยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ราคาเต็ม = ราคาลดแล้ว ÷ (1 − ส่วนลด/100) เช่น ราคาหลังลด 20% เหลือ 400 บาท ราคาเต็ม = 400 ÷ 0.8 = <strong>500 บาท</strong></div>
+    </div>
+    <div class="faq-item">
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลด 20+10 กับลด 30% ต่างกันไหม?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ต่างกันครับ ลด 20+10 รวมจริงได้ <strong>28%</strong> ส่วนลด 30% ตรงๆ จะได้ราคาถูกกว่า เพราะ 30% คิดจากราคาเต็มทั้งหมดในครั้งเดียว</div>
     </div>
   </div>
-  <div class="ad-mid">
-    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (In-content)</div>
+
+  <!-- Related -->
+  <div class="related-wrap">
+    <div class="related-lbl">เครื่องมือที่เกี่ยวข้อง</div>
+    <div class="related-grid">
+      <a class="related-card" href="/kamnuanpercent/">
+        <div class="related-ico"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
+        <span class="related-name">คิดเปอร์เซ็นต์</span>
+      </a>
+      <a class="related-card" href="/kamnuanvat/">
+        <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
+        <span class="related-name">คำนวณ VAT</span>
+      </a>
+      <a class="related-card" href="/kamnuanphasi/">
+        <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+        <span class="related-name">คำนวณภาษีเงินได้</span>
+      </a>
+      <a class="related-card" href="/kamnuandokbia/">
+        <div class="related-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
+        <span class="related-name">คำนวณดอกเบี้ย</span>
+      </a>
+    </div>
   </div>
+</main>
 
-  <div class="info-section">
-    <h2>วิธีใช้เครื่องคิดส่วนลด</h2>
-    <p>เลือกสูตรที่ต้องการด้านบน กรอกตัวเลขแล้วกดคำนวณ รองรับ 4 สูตร ได้แก่ คิดราคาหลังลด ลดหลายชั้น คิดว่าลดไปกี่ % และหาราคาเต็มจากราคาลดแล้ว</p>
-    <h2 class="mt">ลดหลายชั้นคืออะไร</h2>
-    <p>การลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ได้แปลว่าลดรวม 30% เพราะ 10% ที่สองคิดจากราคาหลังลด 20% แล้ว ทำให้ลดรวมจริงๆ ได้น้อยกว่า 30% ครับ</p>
-  </div>
-
-  <div class="ad-mid" style="margin-bottom:0;">
-    <div class="ad-728">📢 Google AdSense — 728×90 Leaderboard (Bottom)</div>
-  </div>
-
-</div>
-
-<footer>
-  <p>© 2568 คิดส่วนลดออนไลน์ · <a href="#">นโยบายความเป็นส่วนตัว</a> · <a href="#">ติดต่อ</a></p>
-  <p style="margin-top:4px;">ผลลัพธ์เป็นการคำนวณทางคณิตศาสตร์</p>
+<footer role="contentinfo">
+  <p>© 2569 คำนวณ <a href="/">หน้าหลัก</a> <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a></p>
 </footer>
 
-<div class="toast" id="toast">คัดลอกแล้ว!</div>
-
 <script>
-function initTheme(){const s=localStorage.getItem('theme');const p=window.matchMedia('(prefers-color-scheme: dark)').matches;applyTheme(s||(p?'dark':'light'));}
-function applyTheme(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('iconSun').style.display=t==='dark'?'block':'none';document.getElementById('iconMoon').style.display=t==='light'?'block':'none';localStorage.setItem('theme',t);}
-function toggleDark(){applyTheme(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
+function initTheme(){const s=localStorage.getItem('theme'),p=matchMedia('(prefers-color-scheme:dark)').matches;applyT(s||(p?'dark':'light'));}
+function applyT(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('iSun').style.display=t==='dark'?'block':'none';document.getElementById('iMoon').style.display=t==='light'?'block':'none';document.getElementById('darkBtn').setAttribute('aria-label',t==='dark'?'เปลี่ยนเป็นโหมดสว่าง':'เปลี่ยนเป็นโหมดสีเข้ม');localStorage.setItem('theme',t);}
+function toggleDark(){applyT(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
 initTheme();
+function toggleFaq(btn){const e=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!e));btn.nextElementSibling.classList.toggle('open',!e);}
+function fmt(n){return parseFloat(n.toFixed(2)).toLocaleString('th-TH');}
 
-const TYPES = ['basic','multi','howmuch','original'];
-let activeType = 'basic';
-
-function fmt(n) { return parseFloat(n.toFixed(2)).toLocaleString('th-TH'); }
-
-function switchType(type) {
-  activeType = type;
-  document.querySelectorAll('.type-tab').forEach(btn => {
-    btn.classList.toggle('active', btn.getAttribute('onclick').includes(`'${type}'`));
-  });
-  TYPES.forEach(t => {
-    document.getElementById('panel-' + t).classList.toggle('active', t === type);
-    const res = document.getElementById('res-' + t);
-    if (res) res.style.display = 'none';
-  });
-}
-
-function show(id) {
-  const el = document.getElementById(id);
-  el.style.display = 'block';
-  requestAnimationFrame(() => el.scrollIntoView({ behavior:'smooth', block:'nearest' }));
-}
-
-/* ── 1. ลด % เหลือเท่าไหร่ ── */
-function calcBasic() {
-  const price = parseFloat(document.getElementById('b-price').value);
-  const pct   = parseFloat(document.getElementById('b-pct').value);
-  if (!price || isNaN(pct)) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
-  const saved = price * pct / 100;
-  const final = price - saved;
-  document.getElementById('b-final').textContent   = fmt(final);
-  document.getElementById('b-saved').textContent   = fmt(saved);
-  document.getElementById('b-pct-show').textContent = fmt(pct) + '%';
-  document.getElementById('b-detail').innerHTML    = `ราคาเต็ม <strong>${fmt(price)}</strong> บาท ลด <strong>${fmt(pct)}%</strong>`;
-  saveHistory(fmt(final)+' บาท', 'ราคาเต็ม '+fmt(price)+' ลด '+fmt(pct)+'%');
-  show('res-basic');
-}
-
-/* ── 2. ลดหลายชั้น ── */
-function calcMulti() {
-  const price = parseFloat(document.getElementById('m-price').value);
-  const p1    = parseFloat(document.getElementById('m-p1').value) || 0;
-  const p2    = parseFloat(document.getElementById('m-p2').value) || 0;
-  const p3    = parseFloat(document.getElementById('m-p3').value) || 0;
-  if (!price || !p1) { alert('กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1'); return; }
-  let current = price;
-  if (p1) current = current * (1 - p1 / 100);
-  if (p2) current = current * (1 - p2 / 100);
-  if (p3) current = current * (1 - p3 / 100);
-  const saved    = price - current;
-  const totalPct = (saved / price) * 100;
-  document.getElementById('m-final').textContent     = fmt(current);
-  document.getElementById('m-saved').textContent     = fmt(saved);
-  document.getElementById('m-total-pct').textContent = fmt(totalPct) + '%';
-  const steps = [p1, p2, p3].filter(p => p > 0).map(p => p + '%').join(' + ');
-  document.getElementById('m-detail').innerHTML = `ลด ${steps} รวมจริงๆ <strong>${fmt(totalPct)}%</strong>`;
-  saveHistory(fmt(current)+' บาท', 'ลดรวม '+fmt(totalPct)+'%');
-  show('res-multi');
-}
-
-/* ── 3. ลดไปกี่ % ── */
-function calcHowMuch() {
-  const original   = parseFloat(document.getElementById('h-original').value);
-  const discounted = parseFloat(document.getElementById('h-discounted').value);
-  if (!original || !discounted) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
-  if (discounted > original) { alert('ราคาหลังลดต้องน้อยกว่าราคาเต็ม'); return; }
-  const saved = original - discounted;
-  const pct   = (saved / original) * 100;
-  document.getElementById('h-pct').textContent            = fmt(pct);
-  document.getElementById('h-saved').textContent          = fmt(saved);
-  document.getElementById('h-discounted-show').textContent = fmt(discounted);
-  document.getElementById('h-detail').innerHTML = `จาก <strong>${fmt(original)}</strong> บาท เหลือ <strong>${fmt(discounted)}</strong> บาท`;
-  saveHistory(fmt(pct)+'%', 'จาก '+fmt(original)+' เหลือ '+fmt(discounted)+' บาท');
-  show('res-howmuch');
-}
-
-/* ── 4. ราคาเต็มคือเท่าไหร่ ── */
-function calcOriginal() {
-  const price = parseFloat(document.getElementById('o-price').value);
-  const pct   = parseFloat(document.getElementById('o-pct').value);
-  if (!price || isNaN(pct) || pct >= 100) { alert('กรุณากรอกข้อมูลให้ครบ'); return; }
-  const original = price / (1 - pct / 100);
-  const saved    = original - price;
-  document.getElementById('o-original').textContent = fmt(original);
-  document.getElementById('o-saved').textContent    = fmt(saved);
-  document.getElementById('o-pct-show').textContent = fmt(pct) + '%';
-  document.getElementById('o-detail').innerHTML     = `ราคาหลังลด <strong>${fmt(pct)}%</strong> คือ <strong>${fmt(price)}</strong> บาท`;
-  saveHistory(fmt(original)+' บาท', 'ราคาเต็มก่อนลด '+fmt(pct)+'%');
-  show('res-original');
-}
-
-/* ── Share ── */
-function getShareText(type) {
-  if (type === 'basic')    return 'ราคาหลังลด ' + document.getElementById('b-final').textContent + ' บาท (ประหยัด ' + document.getElementById('b-saved').textContent + ' บาท)';
-  if (type === 'multi')    return 'ราคาหลังลด ' + document.getElementById('m-final').textContent + ' บาท (ลดรวม ' + document.getElementById('m-total-pct').textContent + ')';
-  if (type === 'howmuch')  return 'ลดไป ' + document.getElementById('h-pct').textContent + '% (ประหยัด ' + document.getElementById('h-saved').textContent + ' บาท)';
-  if (type === 'original') return 'ราคาเต็ม ' + document.getElementById('o-original').textContent + ' บาท';
-  return '';
-}
-
-/* ── Copy ── */
-function copyResult(type) {
-  let text = '';
-  if (type === 'basic') {
-    text = `คิดส่วนลด\nราคาเต็ม ${document.getElementById('b-price').value} บาท ลด ${document.getElementById('b-pct').value}%\nราคาหลังลด ${document.getElementById('b-final').textContent} บาท\nประหยัด ${document.getElementById('b-saved').textContent} บาท`;
-  } else if (type === 'multi') {
-    text = `คิดส่วนลดหลายชั้น\n${document.getElementById('m-detail').textContent}\nราคาหลังลด ${document.getElementById('m-final').textContent} บาท\nประหยัดรวม ${document.getElementById('m-saved').textContent} บาท`;
-  } else if (type === 'howmuch') {
-    text = `ลดไปกี่ %\n${document.getElementById('h-detail').textContent}\nลดไป ${document.getElementById('h-pct').textContent}% (${document.getElementById('h-saved').textContent} บาท)`;
-  } else if (type === 'original') {
-    text = `หาราคาเต็ม\n${document.getElementById('o-detail').textContent}\nราคาเต็มคือ ${document.getElementById('o-original').textContent} บาท`;
+let mode=0;
+function setMode(m){
+  mode=m;
+  for(let i=0;i<4;i++){
+    document.getElementById('tab'+i).classList.toggle('on',i===m);
+    document.getElementById('tab'+i).setAttribute('aria-selected',i===m?'true':'false');
+    document.getElementById('m'+i).style.display=i===m?'block':'none';
   }
-  text += '\nคิดได้ที่ kidsunlod.com';
-  navigator.clipboard.writeText(text).then(showToast).catch(() => {
-    const ta = document.createElement('textarea');
-    ta.value = text; document.body.appendChild(ta);
-    ta.select(); document.execCommand('copy');
-    document.body.removeChild(ta); showToast();
-  });
 }
 
+const hist=JSON.parse(localStorage.getItem('sunlodHist')||'[]');
+function saveHist(result,detail){
+  hist.unshift({result,detail,t:new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})});
+  if(hist.length>8)hist.pop();
+  localStorage.setItem('sunlodHist',JSON.stringify(hist));
+  renderHist();
+}
+function renderHist(){
+  const el=document.getElementById('histList');
+  if(!hist.length){el.innerHTML='<div class="h-empty">ยังไม่มีประวัติ</div>';return;}
+  el.innerHTML=hist.slice(0,8).map(h=>`<div class="h-item"><div class="h-main">${h.result}</div><div class="h-sub">${h.detail} ${h.t}</div></div>`).join('');
+}
+function clearHist(){hist.length=0;localStorage.removeItem('sunlodHist');renderHist();}
+renderHist();
 
-function saveHistory(result, detail) {
-  const item = {
-    result: result,
-    detail: detail,
-    time: new Date().toLocaleTimeString('th-TH', {hour:'2-digit', minute:'2-digit'})
-  };
-  let h = JSON.parse(localStorage.getItem('sunlodHistory') || '[]');
-  h.unshift(item); h = h.slice(0, 5);
-  localStorage.setItem('sunlodHistory', JSON.stringify(h));
-  renderHistory();
+function showRes(id){const el=document.getElementById(id);el.style.display='block';requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'nearest'}));}
+
+function calcBasic(){
+  const price=parseFloat(document.getElementById('b-price').value);
+  const pct=parseFloat(document.getElementById('b-pct').value);
+  if(!price||isNaN(pct)){alert('กรุณากรอกข้อมูลให้ครบ');return;}
+  const saved=price*pct/100;
+  const final=price-saved;
+  document.getElementById('b-final').textContent=fmt(final);
+  document.getElementById('b-price-show').textContent=fmt(price)+' บาท';
+  document.getElementById('b-pct-show').textContent=pct+'%';
+  document.getElementById('b-saved').textContent='−'+fmt(saved)+' บาท';
+  document.getElementById('b-detail').innerHTML=`ราคาเต็ม <strong>${fmt(price)}</strong> บาท ลด <strong>${pct}%</strong>`;
+  saveHist(fmt(final)+' บาท','ลด '+pct+'% จาก '+fmt(price));
+  showRes('r0');
 }
 
-function renderHistory() {
-  const list = document.getElementById('historyList');
-  const h = JSON.parse(localStorage.getItem('sunlodHistory') || '[]');
-  if (!h.length) { list.innerHTML = '<div class="history-empty">ยังไม่มีประวัติการคำนวณ</div>'; return; }
-  list.innerHTML = h.map(item => `
-    <div class="history-item">
-      <div class="history-item-left">
-        <div class="history-item-result">${item.result}</div>
-        <div class="history-item-detail">${item.detail}</div>
-      </div>
-      <div class="history-item-right">${item.time}</div>
-    </div>`).join('');
+function calcMulti(){
+  const price=parseFloat(document.getElementById('m-price').value);
+  const p1=parseFloat(document.getElementById('m-p1').value)||0;
+  const p2=parseFloat(document.getElementById('m-p2').value)||0;
+  const p3=parseFloat(document.getElementById('m-p3').value)||0;
+  if(!price||!p1){alert('กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1');return;}
+  let cur=price;
+  if(p1) cur*=(1-p1/100);
+  if(p2) cur*=(1-p2/100);
+  if(p3) cur*=(1-p3/100);
+  const saved=price-cur;
+  const totalPct=saved/price*100;
+  document.getElementById('m-final').textContent=fmt(cur);
+  document.getElementById('m-saved').textContent=fmt(saved)+' บาท';
+  document.getElementById('m-total-pct').textContent=fmt(totalPct)+'%';
+  const steps=[p1,p2,p3].filter(p=>p>0).map(p=>p+'%').join('+');
+  document.getElementById('m-detail').innerHTML=`ลด ${steps} รวมจริงๆ <strong>${fmt(totalPct)}%</strong>`;
+  saveHist(fmt(cur)+' บาท','ลดหลายชั้น '+steps);
+  showRes('r1');
 }
 
-function clearHistory() { localStorage.removeItem('sunlodHistory'); renderHistory(); }
-
-function shareResult(text, url) {
-  const fullText = text + '\n' + url;
-  return fullText;
+function calcHowMuch(){
+  const orig=parseFloat(document.getElementById('h-orig').value);
+  const sale=parseFloat(document.getElementById('h-sale').value);
+  if(!orig||!sale){alert('กรุณากรอกข้อมูลให้ครบ');return;}
+  const pct=(orig-sale)/orig*100;
+  const saved=orig-sale;
+  document.getElementById('h-pct').textContent=fmt(pct);
+  document.getElementById('h-saved').textContent=fmt(saved)+' บาท';
+  saveHist(fmt(pct)+'%','จาก '+fmt(orig)+' เหลือ '+fmt(sale));
+  showRes('r2');
 }
 
-function shareLineResult(text, url) {
-  window.open('https://line.me/R/msg/text/?' + encodeURIComponent(text + '\n' + url), '_blank');
-}
-
-function shareFbResult(url) {
-  window.open('https://www.facebook.com/sharer/sharer.php?u=' + encodeURIComponent(url), '_blank');
-}
-
-renderHistory();
-function showToast() {
-  const t = document.getElementById('toast');
-  t.classList.add('show');
-  setTimeout(() => t.classList.remove('show'), 2500);
+function calcOriginal(){
+  const sale=parseFloat(document.getElementById('o-sale').value);
+  const pct=parseFloat(document.getElementById('o-pct').value);
+  if(!sale||isNaN(pct)||pct>=100){alert('กรุณากรอกข้อมูลให้ครบ');return;}
+  const orig=sale/(1-pct/100);
+  const saved=orig-sale;
+  document.getElementById('o-orig').textContent=fmt(orig);
+  document.getElementById('o-saved').textContent=fmt(saved)+' บาท';
+  saveHist(fmt(orig)+' บาท','หาราคาเต็ม ลด '+pct+'%');
+  showRes('r3');
 }
 </script>
 </body>
