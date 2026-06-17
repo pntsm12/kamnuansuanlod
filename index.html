@@ -2,218 +2,163 @@
 <html lang="th">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="google-site-verification" content="BcwokyN2W4FMCCIj4YbvGcFCJojtQgojttCnNHCTtL4">
-<title>คิดส่วนลดออนไลน์ — ลดหลายชั้น หาราคาเต็ม คิดว่าลดกี่เปอร์เซ็นต์</title>
-<meta name="description" content="คิดส่วนลดออนไลน์ฟรี รองรับ 4 สูตร ลด % เหลือเท่าไหร่ ลดหลายชั้น คิดว่าลดกี่ % และหาราคาเต็มจากราคาลดแล้ว ใช้งานได้ทันที">
-<meta name="keywords" content="คิดส่วนลด, ส่วนลด, ลดราคา, ราคาหลังลด, ลดหลายชั้น, คำนวณส่วนลด">
-<meta name="robots" content="index, follow">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<title>คิดส่วนลด — ราคาหลังลด ลดหลายชั้น และย้อนหาราคาเต็ม</title>
+<meta name="description" content="คิดส่วนลด 4 สูตร ราคาหลังลด ลดหลายชั้น หาว่าลดกี่ % และย้อนหาราคาเต็มจากราคาลดแล้ว">
 <link rel="canonical" href="https://kamnuan.net/kamnuansuanlod/">
+<meta property="og:title" content="คิดส่วนลด — 4 สูตรครบในที่เดียว">
+<meta property="og:description" content="คิดส่วนลด 4 สูตร ราคาหลังลด ลดหลายชั้น หาว่าลดกี่ % และย้อนหาราคาเต็ม">
 <meta property="og:type" content="website">
-<meta property="og:title" content="คิดส่วนลดออนไลน์ — ลดหลายชั้น หาราคาเต็ม">
-<meta property="og:description" content="คิดส่วนลดออนไลน์ฟรี 4 สูตร ใช้งานได้ทันที">
 <meta property="og:url" content="https://kamnuan.net/kamnuansuanlod/">
 <meta property="og:locale" content="th_TH">
-<meta property="og:site_name" content="คำนวณ">
-
 <script type="application/ld+json">
-{
-  "@context":"https://schema.org",
-  "@graph":[
-    {"@type":"WebApplication","name":"คิดส่วนลดออนไลน์","url":"https://kamnuan.net/kamnuansuanlod/","description":"เครื่องมือคิดส่วนลดออนไลน์ฟรี รองรับ 4 สูตร","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"THB"},"inLanguage":"th","isAccessibleForFree":true},
-    {"@type":"FAQPage","mainEntity":[
-      {"@type":"Question","name":"ลดหลายชั้นคืออะไร คำนวณยังไง","acceptedAnswer":{"@type":"Answer","text":"ลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่คือ ลด 20% ก่อน แล้วค่อยลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ 28% เท่านั้น"}},
-      {"@type":"Question","name":"จะรู้ได้ยังไงว่าสินค้าลดไปกี่เปอร์เซ็นต์","acceptedAnswer":{"@type":"Answer","text":"% ส่วนลด = (ราคาเต็ม - ราคาลดแล้ว) / ราคาเต็ม × 100 เช่น ราคาเต็ม 500 บาท ราคาขาย 350 บาท ลดไป (500-350)/500×100 = 30%"}},
-      {"@type":"Question","name":"หาราคาเต็มจากราคาลดแล้วทำยังไง","acceptedAnswer":{"@type":"Answer","text":"ราคาเต็ม = ราคาลดแล้ว / (1 - ส่วนลด/100) เช่น ราคาหลังลด 20% เหลือ 400 บาท ราคาเต็ม = 400 / 0.8 = 500 บาท"}},
-      {"@type":"Question","name":"ลด 2 ต่อ 20+10 กับ 30% ต่างกันไหม","acceptedAnswer":{"@type":"Answer","text":"ต่างกันครับ ลด 20+10 รวมจริงได้ 28% ส่วนลด 30% จะได้ราคาถูกกว่า เพราะ 30% คิดจากราคาเต็มทั้งหมด"}}
-    ]}
-  ]
-}
+{"@context":"https://schema.org","@graph":[{"@type":"WebApplication","name":"คิดส่วนลด","url":"https://kamnuan.net/kamnuansuanlod/","description":"คิดส่วนลด 4 สูตร ราคาหลังลด ลดหลายชั้น หาว่าลดกี่ % และย้อนหาราคาเต็ม","applicationCategory":"UtilitiesApplication","operatingSystem":"Any","offers":{"@type":"Offer","price":"0","priceCurrency":"THB"},"inLanguage":"th"},{"@type":"FAQPage","mainEntity":[{"@type":"Question","name":"ลดหลายชั้นคืออะไร คำนวณยังไง","acceptedAnswer":{"@type":"Answer","text":"ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่ลด 20% ก่อน แล้วลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ 28% เท่านั้น"}},{"@type":"Question","name":"จะรู้ได้ยังไงว่าสินค้าลดไปกี่ %","acceptedAnswer":{"@type":"Answer","text":"% ส่วนลด = (ราคาเต็ม − ราคาขาย) ÷ ราคาเต็ม × 100 เช่น ราคาเต็ม 500 ขาย 350 ลดไป 30%"}},{"@type":"Question","name":"ย้อนหาราคาเต็มจากราคาลดแล้วยังไง","acceptedAnswer":{"@type":"Answer","text":"ราคาเต็ม = ราคาลดแล้ว ÷ (1 − % ส่วนลด/100) เช่น ราคาลดแล้ว 400 บาท ลด 20% ราคาเต็ม = 400 ÷ 0.8 = 500 บาท"}}]}]}
 </script>
-
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1063556443578237" crossorigin="anonymous"></script>
 <link rel="icon" href="favicon.ico">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@700&family=Sarabun:wght@400;500;600&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@700&family=Sarabun:wght@400;500;600&display=swap">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Serif+Thai:wght@700&family=Sarabun:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-:root{
-  --bg:#F8F8F7;--s0:#FFFFFF;--s1:#F2F1EE;--s2:#ECEAE6;
-  --b0:rgba(0,0,0,0.07);--b1:rgba(0,0,0,0.13);
-  --t0:#18181A;--t1:#4A4946;--t2:#7A7872;
-  --ink:#18181A;--inv:#FFFFFF;--r:8px;--r-lg:12px;
-}
-[data-theme="dark"]{
-  --bg:#111110;--s0:#1C1C1A;--s1:#242422;--s2:#2C2B28;
-  --b0:rgba(255,255,255,0.07);--b1:rgba(255,255,255,0.13);
-  --t0:#EDEAE2;--t1:#A8A49C;--t2:#68655E;--ink:#EDEAE2;--inv:#111110;
-}
-:focus-visible{outline:2px solid #2563EB;outline-offset:2px;border-radius:4px;}
-:focus:not(:focus-visible){outline:none;}
-.skip-link{position:absolute;top:-100%;left:16px;background:var(--ink);color:var(--inv);padding:8px 16px;border-radius:0 0 var(--r) var(--r);font-size:13px;font-weight:600;text-decoration:none;z-index:999;transition:top .15s;}
-.skip-link:focus{top:0;}
-html{scroll-behavior:smooth;}
-body{font-family:'Sarabun',sans-serif;background:var(--bg);color:var(--t0);min-height:100vh;line-height:1.6;-webkit-font-smoothing:antialiased;transition:background .2s,color .2s;}
-header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 20px;gap:12px;border-bottom:1px solid var(--b0);background:rgba(248,248,247,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);}
-[data-theme="dark"] header{background:rgba(17,17,16,0.92);}
-.logo{display:flex;align-items:center;gap:9px;text-decoration:none;flex:1;}
-.logo svg{width:30px;height:30px;display:block;flex-shrink:0;}
-.logo-t{display:flex;flex-direction:column;line-height:1.1;}
-.logo-th{font-family:'Noto Serif Thai',serif;font-size:15px;font-weight:700;color:var(--t0);}
-.logo-en{font-size:9px;font-weight:600;color:var(--t2);letter-spacing:2px;}
-.hdr-right{display:flex;align-items:center;gap:8px;}
-.back-btn{display:inline-flex;align-items:center;gap:5px;padding:5px 11px;border:1px solid var(--b0);border-radius:20px;font-family:'Sarabun',sans-serif;font-size:12px;color:var(--t1);text-decoration:none;transition:border-color .15s,color .15s;white-space:nowrap;}
-.back-btn:hover{border-color:var(--b1);color:var(--t0);}
+html,body{background:#F7F7F5 !important;color:#18181A !important;-webkit-text-size-adjust:100%;}
+body{font-family:'Sarabun',sans-serif;min-height:100vh;-webkit-font-smoothing:antialiased;line-height:1.6;}
+:root{--bg:#F7F7F5;--s0:#FFFFFF;--s1:#EFEFEC;--b0:rgba(0,0,0,0.08);--b1:rgba(0,0,0,0.14);--t0:#18181A;--t1:#52504C;--t2:#96938C;--ink:#18181A;--inv:#FFFFFF;--r:10px;--r-lg:14px;}
+
+header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:center;padding:0 16px;gap:10px;border-bottom:1px solid var(--b0);background:#F7F7F5 !important;}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none;flex:1;min-width:0;}
+.logo-icon{width:30px;height:30px;flex-shrink:0;}
+.logo-t{display:flex;flex-direction:column;line-height:1.15;}
+.logo-th{font-family:'Noto Serif Thai',serif;font-size:15px;font-weight:700;color:#18181A;}
+.logo-en{font-size:9px;font-weight:600;color:#96938C;letter-spacing:2px;}
+.back-btn{display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 10px;border:1px solid var(--b0);border-radius:8px;background:#FFFFFF;font-family:'Sarabun',sans-serif;font-size:12px;font-weight:500;color:#52504C;text-decoration:none;white-space:nowrap;}
 .back-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.dark-btn{width:32px;height:32px;border:1px solid var(--b0);border-radius:6px;background:transparent;cursor:pointer;display:flex;align-items:center;justify-content:center;color:var(--t1);transition:all .15s;}
-.dark-btn:hover{border-color:var(--b1);color:var(--t0);background:var(--s1);}
-.dark-btn svg{width:14px;height:14px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.page{max-width:600px;margin:0 auto;padding:28px 20px 72px;}
+
+.page{width:100%;max-width:600px;margin:0 auto;padding:20px 16px 80px;}
 .page-hd{margin-bottom:20px;}
-.page-hd h1{font-family:'Noto Serif Thai',serif;font-size:clamp(22px,4vw,30px);font-weight:700;color:var(--t0);line-height:1.1;letter-spacing:-.3px;white-space:nowrap;}
-@media(max-width:380px){.page-hd h1{white-space:normal;font-size:22px;}}
-.page-hd p{margin-top:6px;font-size:14px;color:var(--t1);line-height:1.6;}
+.page-hd h1{font-family:'Noto Serif Thai',serif;font-size:clamp(20px,5vw,26px);font-weight:700;color:#18181A;line-height:1.2;}
+.page-hd p{margin-top:6px;font-size:14px;color:#52504C;}
 
-/* Mode tabs */
-.mode-tabs{display:grid;grid-template-columns:repeat(4,1fr);gap:5px;margin-bottom:14px;}
-.m-tab{padding:9px 4px;border:1px solid var(--b0);border-radius:var(--r);background:var(--s0);font-family:'Sarabun',sans-serif;font-size:12px;font-weight:500;color:var(--t1);cursor:pointer;transition:all .15s;text-align:center;line-height:1.4;}
-.m-tab:hover{border-color:var(--b1);color:var(--t0);}
-.m-tab.on{background:var(--ink);border-color:var(--ink);color:var(--inv);}
+.mode-tabs{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin-bottom:16px;}
+.m-tab{height:44px;padding:0 10px;border:1px solid var(--b0);border-radius:var(--r);background:#FFFFFF;font-family:'Sarabun',sans-serif;font-size:13px;font-weight:500;color:#52504C;cursor:pointer;text-align:center;}
+.m-tab.on{background:#18181A;border-color:#18181A;color:#FFFFFF;}
 
-/* Card */
-.card{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;margin-bottom:10px;}
-.card-body{padding:16px 18px;}
-.field{margin-bottom:14px;}
+.card{background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;margin-bottom:12px;width:100%;}
+.card-body{padding:16px;}
+.field{margin-bottom:16px;}
 .field:last-child{margin-bottom:0;}
-.lbl{font-size:13px;font-weight:600;color:var(--t0);margin-bottom:6px;display:block;}
-.hint{font-size:13px;color:var(--t1);margin-top:4px;}
-.inp-row{display:flex;align-items:center;border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;background:var(--s0);transition:border-color .15s,box-shadow .15s;}
-.inp-row:focus-within{border-color:var(--b1);box-shadow:0 0 0 3px rgba(0,0,0,0.04);}
-[data-theme="dark"] .inp-row:focus-within{box-shadow:0 0 0 3px rgba(255,255,255,0.04);}
-.inp-suf{padding:0 11px;font-size:13px;color:var(--t2);background:var(--s1);height:40px;display:flex;align-items:center;border-left:1px solid var(--b0);flex-shrink:0;white-space:nowrap;}
-.inp-row input{flex:1;height:40px;border:none;background:transparent;padding:0 11px;font-family:'Sarabun',sans-serif;font-size:16px;color:var(--t0);outline:none;min-width:0;}
-.inp-row input::placeholder{color:var(--t2);}
-.grid2{display:grid;grid-template-columns:1fr 1fr;gap:10px;}
-@media(max-width:420px){.grid2{grid-template-columns:1fr;}}
-.grid3{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;}
-@media(max-width:420px){.grid3{grid-template-columns:1fr;}}
-.btn-calc{width:100%;height:44px;background:var(--ink);color:var(--inv);border:none;border-radius:var(--r);font-family:'Sarabun',sans-serif;font-size:15px;font-weight:600;cursor:pointer;transition:opacity .15s;margin-top:4px;}
-.btn-calc:hover{opacity:.87;}
+.lbl{display:block;font-size:13px;font-weight:600;color:#18181A;margin-bottom:7px;}
+.hint{font-size:11px;color:#96938C;margin-top:6px;}
 
-/* Result */
-.result-box{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;margin-top:10px;display:none;}
-.result-top{padding:18px 20px;border-bottom:1px solid var(--b0);text-align:center;}
-.result-lbl{font-size:11px;font-weight:600;color:var(--t2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:6px;}
-.result-num{font-family:'Noto Serif Thai',serif;font-size:clamp(36px,8vw,52px);font-weight:700;color:var(--t0);line-height:1;}
-.result-unit{font-size:15px;color:var(--t1);margin-left:4px;}
-.result-sub{font-size:13px;color:var(--t1);margin-top:6px;}
-.result-body{padding:14px 20px;}
-.bd-row{display:flex;justify-content:space-between;align-items:center;padding:7px 0;border-bottom:1px solid var(--b0);font-size:13px;}
+.inp-wrap{display:flex;align-items:stretch;border:1px solid var(--b0);border-radius:var(--r);background:#FFFFFF;overflow:hidden;min-height:44px;}
+.inp-wrap:focus-within{border-color:#18181A;}
+.inp-wrap input{flex:1;min-width:0;width:0;height:44px;padding:0 10px;border:none;background:transparent;font-family:'Sarabun',sans-serif;font-size:16px;color:#18181A;outline:none;}
+.inp-wrap input::placeholder{color:#C0BDB6;}
+.inp-sfx{display:flex;align-items:center;padding:0 10px;background:#EFEFEC;font-size:13px;color:#96938C;white-space:nowrap;flex-shrink:0;border-left:1px solid var(--b0);}
+.inp-pfx{display:flex;align-items:center;padding:0 10px;background:#EFEFEC;font-size:13px;color:#96938C;white-space:nowrap;flex-shrink:0;border-right:1px solid var(--b0);}
+
+.grid2{display:grid;grid-template-columns:1fr 1fr 1fr;gap:8px;width:100%;}
+.grid2 .field{min-width:0;}
+
+.divider-label{font-size:11px;font-weight:600;color:#96938C;margin:4px 0 10px;text-align:center;}
+
+.btn-calc{width:100%;height:50px;margin-top:4px;background:#18181A;color:#FFFFFF;border:none;border-radius:var(--r-lg);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;cursor:pointer;}
+.err-msg{display:none;margin-top:10px;font-size:13px;color:#DC2626;text-align:center;}
+
+.result-box{display:none;margin-top:16px;}
+.result-top{background:#18181A;color:#FFFFFF;border-radius:var(--r-lg);padding:20px 16px;text-align:center;margin-bottom:10px;}
+.result-label{font-size:13px;opacity:.7;margin-bottom:4px;}
+.result-num{font-family:'Noto Serif Thai',serif;font-size:42px;font-weight:700;line-height:1.1;}
+.result-unit{font-size:14px;opacity:.7;margin-left:4px;}
+.result-sub{font-size:13px;opacity:.7;margin-top:8px;}
+
+.result-body{background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r-lg);overflow:hidden;}
+.bd-row{display:flex;justify-content:space-between;align-items:center;padding:11px 14px;border-bottom:1px solid var(--b0);font-size:14px;}
 .bd-row:last-child{border-bottom:none;}
-.bd-lbl{color:var(--t1);}
-.bd-val{font-weight:600;color:var(--t0);}
-.bd-val.green{color:#16A34A;}
+.bd-row.total{font-weight:600;background:#EFEFEC;}
+.bd-label{color:#52504C;}
+.bd-val{color:#18181A;font-weight:500;}
 .bd-val.red{color:#DC2626;}
+.bd-val.green{color:#16A34A;}
 
-/* History */
-.hist-wrap{margin-top:14px;}
-.hist-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;}
-.hist-lbl{font-size:12px;font-weight:600;color:var(--t1);}
-.hist-clr{font-size:12px;color:var(--t2);background:none;border:none;cursor:pointer;font-family:'Sarabun',sans-serif;padding:0;}
-.hist-clr:hover{color:var(--t1);}
-.hist-list{display:flex;flex-direction:column;gap:5px;}
-.h-item{background:var(--s0);border:1px solid var(--b0);border-radius:var(--r);padding:9px 13px;}
-.h-main{font-size:15px;font-weight:600;color:var(--t0);}
-.h-sub{font-size:11px;color:var(--t2);margin-top:2px;}
-.h-empty{font-size:13px;color:var(--t2);padding:12px;text-align:center;}
-
-/* FAQ */
-.faq-wrap{margin-top:28px;border-top:1px solid var(--b0);padding-top:24px;}
-.faq-h2{font-family:'Noto Serif Thai',serif;font-size:18px;font-weight:700;color:var(--t0);margin-bottom:14px;}
-.faq-item{border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;margin-bottom:8px;}
-.faq-q{width:100%;padding:13px 16px;background:var(--s0);border:none;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:500;color:var(--t0);text-align:left;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:10px;transition:background .15s;}
-.faq-q:hover{background:var(--s1);}
-.faq-q svg{width:14px;height:14px;stroke:var(--t2);stroke-width:2;fill:none;stroke-linecap:round;flex-shrink:0;transition:transform .2s;}
-.faq-q[aria-expanded="true"] svg{transform:rotate(180deg);}
-.faq-a{padding:0 16px;font-size:13px;color:var(--t1);line-height:1.8;max-height:0;overflow:hidden;transition:max-height .25s ease,padding .25s ease;}
-.faq-a.open{max-height:300px;padding:0 16px 14px;}
-
-/* Related */
-.related-wrap{margin-top:20px;border-top:1px solid var(--b0);padding-top:20px;}
-.related-lbl{font-size:11px;font-weight:600;color:var(--t2);letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
-.related-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:6px;}
-.related-card{display:flex;align-items:center;gap:10px;padding:10px 13px;background:var(--s0);border:1px solid var(--b0);border-radius:var(--r);text-decoration:none;color:var(--t0);transition:border-color .14s,background .14s;}
-.related-card:hover{border-color:var(--b1);background:var(--s1);}
-.related-ico{width:28px;height:28px;background:var(--ink);border-radius:6px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
-.related-ico svg{width:12px;height:12px;stroke:var(--inv);stroke-width:1.75;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.related-name{font-size:12px;font-weight:500;}
-/* Info section */
-.info-wrap{margin-top:28px;border-top:1px solid var(--b0);padding-top:24px;}
-.info-h2{font-family:'Noto Serif Thai',serif;font-size:18px;font-weight:700;color:var(--t0);margin-bottom:8px;}
-.info-p{font-size:13px;color:var(--t1);line-height:1.7;margin-bottom:12px;}
-.info-example{background:var(--s1);border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;}
-.ie-row{display:flex;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--b0);font-size:13px;color:var(--t1);}
+.info-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--b0);}
+.info-wrap h2{font-family:'Noto Serif Thai',serif;font-size:16px;font-weight:700;color:#18181A;margin-bottom:8px;}
+.info-wrap p{font-size:14px;color:#52504C;line-height:1.7;margin-bottom:12px;}
+.info-example{background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;}
+.ie-row{display:flex;justify-content:space-between;padding:9px 14px;border-bottom:1px solid var(--b0);font-size:13px;color:#52504C;}
 .ie-row:last-child{border-bottom:none;}
-.ie-row.bold{font-weight:600;color:var(--t0);}
-.ie-row .red{color:#DC2626;}
+.ie-row.bold{font-weight:600;color:#18181A;background:#EFEFEC;}
 
-footer{border-top:1px solid var(--b0);padding:20px;text-align:center;font-size:12px;color:var(--t2);}
-footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
-@media(max-width:480px){header,.page{padding-left:16px;padding-right:16px;}}
+.faq-wrap{margin-top:28px;}
+.faq-title{font-family:'Noto Serif Thai',serif;font-size:20px;font-weight:700;color:#18181A;margin-bottom:12px;}
+.faq-item{border:1px solid var(--b0);border-radius:var(--r);overflow:hidden;margin-bottom:8px;}
+.faq-q{width:100%;display:flex;justify-content:space-between;align-items:center;padding:14px;background:#FFFFFF;border:none;cursor:pointer;font-family:'Sarabun',sans-serif;font-size:14px;font-weight:500;color:#18181A;text-align:left;gap:12px;min-height:48px;}
+.faq-q svg{width:16px;height:16px;stroke:#96938C;stroke-width:2;fill:none;flex-shrink:0;transition:transform .2s;}
+.faq-q[aria-expanded="true"] svg{transform:rotate(180deg);}
+.faq-a{max-height:0;overflow:hidden;font-size:14px;color:#52504C;line-height:1.7;transition:max-height .25s ease,padding .25s ease;padding:0 14px;background:#EFEFEC;}
+.faq-a.open{max-height:400px;padding:14px;}
+.faq-a strong{color:#18181A;}
+
+.related-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--b0);}
+.related-title{font-size:11px;font-weight:600;color:#96938C;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
+.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
+.related-card{display:flex;align-items:center;gap:10px;padding:12px;background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r);text-decoration:none;}
+.related-ico{width:32px;height:32px;border-radius:8px;background:#18181A;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+.related-ico svg{width:15px;height:15px;stroke:#FFFFFF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.related-name{font-size:13px;font-weight:500;color:#18181A;}
+
+footer{border-top:1px solid var(--b0);padding:20px 16px;text-align:center;font-size:12px;color:#96938C;line-height:2;}
+footer a{color:#96938C;text-decoration:none;}
 </style>
 </head>
 <body>
-<a class="skip-link" href="#main-content">ข้ามไปเนื้อหาหลัก</a>
+
 <header role="banner">
   <a class="logo" href="/" aria-label="คำนวณ หน้าหลัก">
-    <svg viewBox="0 0 30 30" fill="none" aria-hidden="true"><rect width="30" height="30" rx="6" fill="var(--ink)"/><text x="4" y="22" font-family="Arial Black,sans-serif" font-size="20" font-weight="900" fill="var(--inv)">K</text><text x="13" y="25" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="var(--inv)">+x=</text></svg>
-    <div class="logo-t"><span class="logo-th">คำนวณ</span><span class="logo-en">KAMNUAN</span></div>
+    <svg class="logo-icon" viewBox="0 0 30 30" fill="none">
+      <rect width="30" height="30" rx="6" fill="#18181A"/>
+      <text x="4" y="22" font-family="Arial Black,sans-serif" font-size="20" font-weight="900" fill="#FFFFFF">K</text>
+      <text x="13" y="25" font-family="Arial,sans-serif" font-size="7" font-weight="700" fill="#FFFFFF">+×=</text>
+    </svg>
+    <div class="logo-t">
+      <span class="logo-th">คำนวณ</span>
+      <span class="logo-en">KAMNUAN</span>
+    </div>
   </a>
-  <div class="hdr-right">
-    <a class="back-btn" href="/" aria-label="กลับไปดูเครื่องมือทั้งหมด"><svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="15 18 9 12 15 6"/></svg>เครื่องมือทั้งหมด</a>
-    <button class="dark-btn" id="darkBtn" onclick="toggleDark()" aria-label="สลับโหมดสีเข้ม/สว่าง" type="button">
-      <svg id="iSun" style="display:none" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M4.93 19.07l1.41-1.41M17.66 6.34l1.41-1.41"/></svg>
-      <svg id="iMoon" viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"/></svg>
-    </button>
-  </div>
+  <a class="back-btn" href="/"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>เครื่องมือทั้งหมด</a>
 </header>
 
-
-<main id="main-content" class="page">
+<div class="page">
   <div class="page-hd">
     <h1>คิดส่วนลด</h1>
-    <p>เลือกสูตร กรอกตัวเลข แล้วรู้ทันทีว่าราคาหลังลดเป็นเท่าไหร่</p>
+    <p>เลือกสูตร กรอกตัวเลข รู้ผลทันที</p>
   </div>
 
-  <div class="mode-tabs" role="tablist" aria-label="สูตรคำนวณ">
-    <button class="m-tab on" id="tab0" onclick="setMode(0)" role="tab" aria-selected="true" type="button">ราคาหลังลด<br>% เท่าไหร่</button>
-    <button class="m-tab" id="tab1" onclick="setMode(1)" role="tab" aria-selected="false" type="button">ลด<br>หลายชั้น</button>
-    <button class="m-tab" id="tab2" onclick="setMode(2)" role="tab" aria-selected="false" type="button">ลดไปกี่<br>เปอร์เซ็นต์</button>
-    <button class="m-tab" id="tab3" onclick="setMode(3)" role="tab" aria-selected="false" type="button">ราคาเต็ม<br>เดิมเท่าไหร่</button>
+  <div class="mode-tabs">
+    <button class="m-tab on" id="tab0" onclick="setMode(0)" type="button">ราคาหลังลด</button>
+    <button class="m-tab" id="tab1" onclick="setMode(1)" type="button">ลดหลายชั้น</button>
+    <button class="m-tab" id="tab2" onclick="setMode(2)" type="button">ลดไปกี่ %</button>
+    <button class="m-tab" id="tab3" onclick="setMode(3)" type="button">ราคาเต็มเดิม</button>
   </div>
 
-  <!-- Mode 0: ลด % เหลือเท่าไหร่ -->
+  <!-- Mode 0: ราคาหลังลด -->
   <div id="m0">
     <div class="card"><div class="card-body">
-      <div class="grid2">
-        <div class="field"><label class="lbl" for="b-price">ราคาเต็ม (บาท)</label><div class="inp-row"><input type="number" id="b-price" placeholder="เช่น 500" inputmode="decimal"></div></div>
-        <div class="field"><label class="lbl" for="b-pct">ส่วนลด (%)</label><div class="inp-row"><input type="number" id="b-pct" placeholder="เช่น 20" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div></div>
-      </div>
+      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="b-price" placeholder="500" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ส่วนลด</label><div class="inp-wrap"><input type="number" id="b-pct" placeholder="20" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
       <button class="btn-calc" onclick="calcBasic()" type="button">คำนวณ</button>
-      <div id="err0" style="display:none;margin-top:8px;font-size:13px;color:#ef4444;text-align:center;"></div>
+      <div class="err-msg" id="err0"></div>
     </div></div>
     <div class="result-box" id="r0">
       <div class="result-top">
-        <div class="result-lbl">ราคาหลังลด</div>
-        <div><span class="result-num" id="b-final">–</span><span class="result-unit">บาท</span></div>
+        <div class="result-label">ราคาหลังลด</div>
+        <div><span class="result-num" id="b-result">—</span><span class="result-unit">บาท</span></div>
         <div class="result-sub" id="b-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-lbl">ราคาเต็ม</span><span class="bd-val" id="b-price-show">–</span></div>
-        <div class="bd-row"><span class="bd-lbl">ส่วนลด <span id="b-pct-show"></span></span><span class="bd-val red" id="b-saved">–</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาเต็ม</span><span class="bd-val" id="b-full">—</span></div>
+        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="b-discount">—</span></div>
+        <div class="bd-row total"><span class="bd-label">ราคาหลังลด</span><span class="bd-val" id="b-final">—</span></div>
       </div>
     </div>
   </div>
@@ -221,245 +166,202 @@ footer a{color:var(--t2);text-decoration:none;}footer a:hover{color:var(--t1);}
   <!-- Mode 1: ลดหลายชั้น -->
   <div id="m1" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="field"><label class="lbl" for="m-price">ราคาเต็ม (บาท)</label><div class="inp-row"><input type="number" id="m-price" placeholder="เช่น 1,000" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="m-price" placeholder="1000" inputmode="decimal"></div></div>
       <div class="field">
-        <label class="lbl">ส่วนลดแต่ละชั้น (%)</label>
-        <div class="grid3">
-          <div class="inp-row"><input type="number" id="m-p1" placeholder="ชั้น 1" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
-          <div class="inp-row"><input type="number" id="m-p2" placeholder="ชั้น 2" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
-          <div class="inp-row"><input type="number" id="m-p3" placeholder="ชั้น 3" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div>
+        <label class="lbl">ส่วนลดแต่ละชั้น</label>
+        <div class="grid2">
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p1" placeholder="ชั้น 1" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p2" placeholder="ชั้น 2" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p3" placeholder="ชั้น 3" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
         </div>
-        <div class="hint">กรอกอย่างน้อย 2 ชั้น ชั้น 3 ไม่บังคับ</div>
+        <div class="hint">กรอกชั้นที่มี ชั้นที่ไม่มีปล่อยว่างไว้</div>
       </div>
       <button class="btn-calc" onclick="calcMulti()" type="button">คำนวณ</button>
-      <div id="err1" style="display:none;margin-top:8px;font-size:13px;color:#ef4444;text-align:center;"></div>
+      <div class="err-msg" id="err1"></div>
     </div></div>
     <div class="result-box" id="r1">
       <div class="result-top">
-        <div class="result-lbl">ราคาหลังลดหลายชั้น</div>
-        <div><span class="result-num" id="m-final">–</span><span class="result-unit">บาท</span></div>
+        <div class="result-label">ราคาหลังลดทุกชั้น</div>
+        <div><span class="result-num" id="m-result">—</span><span class="result-unit">บาท</span></div>
         <div class="result-sub" id="m-detail"></div>
       </div>
-      <div class="result-body">
-        <div class="bd-row"><span class="bd-lbl">ส่วนลดรวมจริงๆ</span><span class="bd-val red" id="m-total-pct">–</span></div>
-        <div class="bd-row"><span class="bd-lbl">ประหยัดไป</span><span class="bd-val green" id="m-saved">–</span></div>
-      </div>
+      <div class="result-body" id="m-body"></div>
     </div>
   </div>
 
   <!-- Mode 2: ลดไปกี่ % -->
   <div id="m2" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="grid2">
-        <div class="field"><label class="lbl" for="h-orig">ราคาก่อนลด (บาท)</label><div class="inp-row"><input type="number" id="h-orig" placeholder="เช่น 500" inputmode="decimal"></div></div>
-        <div class="field"><label class="lbl" for="h-sale">ราคาที่ขายจริง (บาท)</label><div class="inp-row"><input type="number" id="h-sale" placeholder="เช่น 350" inputmode="decimal"></div></div>
-      </div>
-      <div class="hint" style="margin-bottom:8px;">ผลลัพธ์จะบอกว่าลดไปกี่ % และประหยัดไปเท่าไหร่</div>
+      <div class="field"><label class="lbl">ราคาก่อนลด (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-orig" placeholder="500" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ราคาที่ขายจริง (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-sale" placeholder="350" inputmode="decimal"></div></div>
       <button class="btn-calc" onclick="calcHowMuch()" type="button">คำนวณ</button>
-      <div id="err2" style="display:none;margin-top:8px;font-size:13px;color:#ef4444;text-align:center;"></div>
+      <div class="err-msg" id="err2"></div>
     </div></div>
     <div class="result-box" id="r2">
       <div class="result-top">
-        <div class="result-lbl">ลดไป</div>
-        <div><span class="result-num" id="h-pct">–</span><span class="result-unit">%</span></div>
+        <div class="result-label">ลดไป</div>
+        <div><span class="result-num" id="h-result">—</span><span class="result-unit">%</span></div>
+        <div class="result-sub" id="h-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-lbl">ประหยัดไป</span><span class="bd-val green" id="h-saved">–</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาก่อนลด</span><span class="bd-val" id="h-orig-val">—</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="h-sale-val">—</span></div>
+        <div class="bd-row"><span class="bd-label">ประหยัดได้</span><span class="bd-val green" id="h-saved">—</span></div>
+        <div class="bd-row total"><span class="bd-label">ลดไปทั้งหมด</span><span class="bd-val" id="h-pct-val">—</span></div>
       </div>
     </div>
   </div>
 
-  <!-- Mode 3: หาราคาเต็ม -->
+  <!-- Mode 3: ย้อนหาราคาเต็ม -->
   <div id="m3" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="grid2">
-        <div class="field"><label class="lbl" for="o-sale">ราคาลดแล้ว (บาท)</label><div class="inp-row"><input type="number" id="o-sale" placeholder="เช่น 400" inputmode="decimal"></div></div>
-        <div class="field"><label class="lbl" for="o-pct">ส่วนลดที่ใช้ (%)</label><div class="inp-row"><input type="number" id="o-pct" placeholder="เช่น 20" inputmode="decimal"><div class="inp-suf" aria-hidden="true">%</div></div></div>
-      </div>
+      <div class="field"><label class="lbl">ราคาลดแล้ว (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="o-sale" placeholder="400" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ส่วนลดที่ใช้</label><div class="inp-wrap"><input type="number" id="o-pct" placeholder="20" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
       <button class="btn-calc" onclick="calcOriginal()" type="button">คำนวณ</button>
-      <div id="err3" style="display:none;margin-top:8px;font-size:13px;color:#ef4444;text-align:center;"></div>
+      <div class="err-msg" id="err3"></div>
     </div></div>
     <div class="result-box" id="r3">
       <div class="result-top">
-        <div class="result-lbl">ราคาเต็มก่อนลด</div>
-        <div><span class="result-num" id="o-orig">–</span><span class="result-unit">บาท</span></div>
+        <div class="result-label">ราคาเต็มเดิม</div>
+        <div><span class="result-num" id="o-result">—</span><span class="result-unit">บาท</span></div>
+        <div class="result-sub" id="o-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-lbl">ส่วนลดที่หักออก</span><span class="bd-val red" id="o-saved">–</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาเต็มเดิม</span><span class="bd-val" id="o-full">—</span></div>
+        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="o-discount">—</span></div>
+        <div class="bd-row total"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="o-final">—</span></div>
       </div>
     </div>
   </div>
 
-  <!-- History -->
-  <div class="hist-wrap">
-    <div class="hist-head">
-      <span class="hist-lbl">ประวัติการคำนวณ</span>
-      <button class="hist-clr" onclick="clearHist()" type="button">ล้างประวัติ</button>
-    </div>
-    <div class="hist-list" id="histList"><div class="h-empty">ยังไม่มีประวัติ</div></div>
-  </div>
-
-  <!-- FAQ -->
   <div class="faq-wrap">
-    <h2 class="faq-h2">คำถามที่พบบ่อย</h2>
+    <h2 class="faq-title">คำถามที่พบบ่อย</h2>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลดหลายชั้นคืออะไร คำนวณยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a">ลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่คือ ลด 20% ก่อน แล้วค่อยลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ <strong>28%</strong> เท่านั้น</div>
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลดหลายชั้นคืออะไร คำนวณยังไง<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ลดหลายชั้นคือการลดราคาซ้อนกัน เช่น ลด 20% แล้วลดอีก 10% ไม่ใช่ลดรวม 30% แต่คือลด 20% ก่อน แล้วค่อยลด 10% จากราคาที่ลดแล้ว ทำให้ลดรวมจริงได้ <strong>28%</strong> เท่านั้น</div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">จะรู้ได้ยังไงว่าสินค้าลดไปกี่ %?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a">% ส่วนลด = (ราคาเต็ม − ราคาขาย) / ราคาเต็ม × 100 เช่น ราคาเต็ม 500 ขาย 350 = (500−350)/500×100 = <strong>30%</strong></div>
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">จะรู้ได้ยังไงว่าสินค้าลดไปกี่ %<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">% ส่วนลด = (ราคาเต็ม − ราคาขาย) ÷ ราคาเต็ม × 100 เช่น ราคาเต็ม 500 ขาย 350 = (500−350)÷500×100 = <strong>30%</strong></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">หาราคาเต็มจากราคาลดแล้วทำยังไง?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a">ราคาเต็ม = ราคาลดแล้ว ÷ (1 − ส่วนลด/100) เช่น ราคาหลังลด 20% เหลือ 400 บาท ราคาเต็ม = 400 ÷ 0.8 = <strong>500 บาท</strong></div>
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ย้อนหาราคาเต็มจากราคาลดแล้วทำยังไง<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ราคาเต็ม = ราคาลดแล้ว ÷ (1 − % ส่วนลด÷100) เช่น ราคาลดแล้ว 400 บาท ลด 20% ราคาเต็ม = 400÷0.8 = <strong>500 บาท</strong></div>
     </div>
     <div class="faq-item">
-      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลด 20+10 กับลด 30% ต่างกันไหม?<svg viewBox="0 0 24 24" aria-hidden="true"><polyline points="6 9 12 15 18 9"/></svg></button>
-      <div class="faq-a">ต่างกันครับ ลด 20+10 รวมจริงได้ <strong>28%</strong> ส่วนลด 30% ตรงๆ จะได้ราคาถูกกว่า เพราะ 30% คิดจากราคาเต็มทั้งหมดในครั้งเดียว</div>
+      <button class="faq-q" onclick="toggleFaq(this)" aria-expanded="false" type="button">ลด 20% แล้วลด 10% รวมลดได้เท่าไหร่<svg viewBox="0 0 24 24"><polyline points="6 9 12 15 18 9"/></svg></button>
+      <div class="faq-a">ลดได้รวม <strong>28%</strong> ไม่ใช่ 30% เพราะชั้นที่ 2 คิดจากราคาหลังลดชั้นแรกแล้ว สูตร: 1 − (0.8 × 0.9) = 0.28 = 28%</div>
     </div>
   </div>
 
-  <!-- Info section -->
   <div class="info-wrap">
-    <h2 class="info-h2">ส่วนลดหลายชั้น ≠ รวมกัน</h2>
-    <p class="info-p">ลด 20% แล้วลดอีก 10% <strong>ไม่เท่ากับ</strong> ลด 30% เพราะชั้นที่ 2 คำนวณจากราคาหลังลดชั้นแรกแล้ว</p>
+    <h2>ส่วนลดหลายชั้น ≠ รวมกัน</h2>
+    <p>ตัวอย่างราคา 1,000 บาท ลด 20% แล้วลดอีก 10%</p>
     <div class="info-example">
       <div class="ie-row"><span>ราคาเต็ม</span><span>1,000 บาท</span></div>
-      <div class="ie-row"><span>ลด 20% (ชั้น 1)</span><span class="red">−200 บาท → เหลือ 800</span></div>
-      <div class="ie-row"><span>ลด 10% (ชั้น 2)</span><span class="red">−80 บาท → เหลือ 720</span></div>
+      <div class="ie-row"><span>ลด 20% (ชั้น 1)</span><span style="color:#DC2626;">−200 บาท เหลือ 800</span></div>
+      <div class="ie-row"><span>ลด 10% (ชั้น 2)</span><span style="color:#DC2626;">−80 บาท เหลือ 720</span></div>
       <div class="ie-row bold"><span>ลดจริงทั้งหมด</span><span>28% (ไม่ใช่ 30%)</span></div>
     </div>
   </div>
 
-  <!-- Related -->
   <div class="related-wrap">
-    <div class="related-lbl">เครื่องมือที่เกี่ยวข้อง</div>
+    <div class="related-title">เครื่องมือที่เกี่ยวข้อง</div>
     <div class="related-grid">
-      <a class="related-card" href="/kamnuanpercent/">
-        <div class="related-ico"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div>
-        <span class="related-name">คิดเปอร์เซ็นต์</span>
-      </a>
-      <a class="related-card" href="/kamnuanvat/">
-        <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div>
-        <span class="related-name">คำนวณ VAT</span>
-      </a>
-      <a class="related-card" href="/kamnuanphasi/">
-        <div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
-        <span class="related-name">คำนวณภาษีเงินได้</span>
-      </a>
-      <a class="related-card" href="/kamnuandokbia/">
-        <div class="related-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div>
-        <span class="related-name">คำนวณดอกเบี้ย</span>
-      </a>
+      <a class="related-card" href="/kamnuanpercent/"><div class="related-ico"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><span class="related-name">คิดเปอร์เซ็นต์</span></a>
+      <a class="related-card" href="/kamnuanvat/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="related-name">คำนวณ VAT</span></a>
+      <a class="related-card" href="/kamnuanphasi/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="related-name">คำนวณภาษีเงินได้</span></a>
+      <a class="related-card" href="/kamnuandokbia/"><div class="related-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><span class="related-name">คำนวณดอกเบี้ย</span></a>
     </div>
   </div>
-</main>
+</div>
 
 <footer role="contentinfo">
-  <p>© 2569 คำนวณ · <a href="/">หน้าหลัก</a> · <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a></p>
+  <p>© 2569 คำนวณ · <a href="/">หน้าหลัก</a> · <a href="/about.html">เกี่ยวกับเรา</a> · <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="/terms.html">เงื่อนไข</a> · <a href="/contact.html">ติดต่อ</a></p>
 </footer>
 
 <script>
-function initTheme(){const s=localStorage.getItem('theme'),p=matchMedia('(prefers-color-scheme:dark)').matches;applyT(s||(p?'dark':'light'));}
-function applyT(t){document.documentElement.setAttribute('data-theme',t);document.getElementById('iSun').style.display=t==='dark'?'block':'none';document.getElementById('iMoon').style.display=t==='light'?'block':'none';document.getElementById('darkBtn').setAttribute('aria-label',t==='dark'?'เปลี่ยนเป็นโหมดสว่าง':'เปลี่ยนเป็นโหมดสีเข้ม');localStorage.setItem('theme',t);}
-function toggleDark(){applyT(document.documentElement.getAttribute('data-theme')==='dark'?'light':'dark');}
-initTheme();
 function toggleFaq(btn){const e=btn.getAttribute('aria-expanded')==='true';btn.setAttribute('aria-expanded',String(!e));btn.nextElementSibling.classList.toggle('open',!e);}
-function fmt(n){return parseFloat(n.toFixed(2)).toLocaleString('th-TH');}
+function fmt(n){const r=Math.round(n*100)/100;return r.toLocaleString('th-TH',{minimumFractionDigits:2,maximumFractionDigits:2});}
 
-let mode=0;
 function setMode(m){
-  mode=m;
-  for(let i=0;i<4;i++){
+  [0,1,2,3].forEach(i=>{
     document.getElementById('tab'+i).classList.toggle('on',i===m);
-    document.getElementById('tab'+i).setAttribute('aria-selected',i===m?'true':'false');
-    document.getElementById('m'+i).style.display=i===m?'block':'none';
-  }
+    document.getElementById('m'+i).style.display=i===m?'':'none';
+  });
 }
 
-const hist=JSON.parse(localStorage.getItem('sunlodHist')||'[]');
-function saveHist(result,detail){
-  hist.unshift({result,detail,t:new Date().toLocaleTimeString('th-TH',{hour:'2-digit',minute:'2-digit'})});
-  if(hist.length>8)hist.pop();
-  localStorage.setItem('sunlodHist',JSON.stringify(hist));
-  renderHist();
-}
-function renderHist(){
-  const el=document.getElementById('histList');
-  if(!hist.length){el.innerHTML='<div class="h-empty">ยังไม่มีประวัติ</div>';return;}
-  el.innerHTML=hist.slice(0,8).map(h=>`<div class="h-item"><div class="h-main">${h.result}</div><div class="h-sub">${h.detail} ${h.t}</div></div>`).join('');
-}
-function clearHist(){hist.length=0;localStorage.removeItem('sunlodHist');renderHist();}
-renderHist();
-
-function showRes(id){const el=document.getElementById(id);el.style.display='block';requestAnimationFrame(()=>el.scrollIntoView({behavior:'smooth',block:'nearest'}));}
+function showRes(id){document.getElementById(id).style.display='block';requestAnimationFrame(()=>document.getElementById(id).scrollIntoView({behavior:'smooth',block:'nearest'}));}
 
 function calcBasic(){
-  const price=parseFloat(document.getElementById('b-price').value);
+  const p=parseFloat(document.getElementById('b-price').value);
   const pct=parseFloat(document.getElementById('b-pct').value);
-  const err0=document.getElementById('err0');
-  if(!price||isNaN(pct)){err0.textContent='กรุณากรอกราคาเต็มและส่วนลดให้ครบ';err0.style.display='block';return;}
-  err0.style.display='none';
-  const saved=price*pct/100;
-  const final=price-saved;
-  document.getElementById('b-final').textContent=fmt(final);
-  document.getElementById('b-price-show').textContent=fmt(price)+' บาท';
-  document.getElementById('b-pct-show').textContent=pct+'%';
-  document.getElementById('b-saved').textContent='−'+fmt(saved)+' บาท';
-  document.getElementById('b-detail').innerHTML=`ราคาเต็ม <strong>${fmt(price)}</strong> บาท ลด <strong>${pct}%</strong>`;
-  saveHist(fmt(final)+' บาท','ลด '+pct+'% จาก '+fmt(price));
+  const err=document.getElementById('err0');
+  if(!p||isNaN(pct)){err.textContent='กรุณากรอกราคาเต็มและส่วนลดให้ครบ';err.style.display='block';return;}
+  err.style.display='none';
+  const disc=p*pct/100,final=p-disc;
+  document.getElementById('b-result').textContent=fmt(final);
+  document.getElementById('b-detail').textContent='ประหยัดได้ '+fmt(disc)+' บาท';
+  document.getElementById('b-full').textContent=fmt(p)+' บาท';
+  document.getElementById('b-discount').textContent='−'+fmt(disc)+' บาท';
+  document.getElementById('b-final').textContent=fmt(final)+' บาท';
   showRes('r0');
 }
 
 function calcMulti(){
-  const price=parseFloat(document.getElementById('m-price').value);
+  const p=parseFloat(document.getElementById('m-price').value);
   const p1=parseFloat(document.getElementById('m-p1').value)||0;
   const p2=parseFloat(document.getElementById('m-p2').value)||0;
   const p3=parseFloat(document.getElementById('m-p3').value)||0;
-  const err1=document.getElementById('err1');
-  if(!price||!p1){err1.textContent='กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1';err1.style.display='block';return;}
-  err1.style.display='none';
-  let cur=price;
-  if(p1) cur*=(1-p1/100);
-  if(p2) cur*=(1-p2/100);
-  if(p3) cur*=(1-p3/100);
-  const saved=price-cur;
-  const totalPct=saved/price*100;
-  document.getElementById('m-final').textContent=fmt(cur);
-  document.getElementById('m-saved').textContent=fmt(saved)+' บาท';
-  document.getElementById('m-total-pct').textContent=fmt(totalPct)+'%';
-  const steps=[p1,p2,p3].filter(p=>p>0).map(p=>p+'%').join('+');
-  document.getElementById('m-detail').innerHTML=`ลด ${steps} รวมจริงๆ <strong>${fmt(totalPct)}%</strong>`;
-  saveHist(fmt(cur)+' บาท','ลดหลายชั้น '+steps);
+  const err=document.getElementById('err1');
+  if(!p||!p1){err.textContent='กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1';err.style.display='block';return;}
+  err.style.display='none';
+  let cur=p,rows='',totalDisc=0;
+  [[p1,'ชั้น 1'],[p2,'ชั้น 2'],[p3,'ชั้น 3']].forEach(([pct,label])=>{
+    if(!pct) return;
+    const disc=cur*pct/100;
+    totalDisc+=disc;
+    cur-=disc;
+    rows+=`<div class="bd-row"><span class="bd-label">ลด ${pct}% (${label})</span><span class="bd-val red">−${fmt(disc)} บาท</span></div>`;
+  });
+  const totalPct=((p-cur)/p*100);
+  document.getElementById('m-result').textContent=fmt(cur);
+  document.getElementById('m-detail').textContent=`ลดรวมจริง ${fmt(totalPct)}% ประหยัด ${fmt(totalDisc)} บาท`;
+  document.getElementById('m-body').innerHTML=
+    `<div class="bd-row"><span class="bd-label">ราคาเต็ม</span><span class="bd-val">${fmt(p)} บาท</span></div>`+
+    rows+
+    `<div class="bd-row total"><span class="bd-label">ราคาหลังลดทุกชั้น</span><span class="bd-val">${fmt(cur)} บาท</span></div>`;
   showRes('r1');
 }
 
 function calcHowMuch(){
   const orig=parseFloat(document.getElementById('h-orig').value);
   const sale=parseFloat(document.getElementById('h-sale').value);
-  const err2=document.getElementById('err2');
-  if(!orig||!sale){err2.textContent='กรุณากรอกราคาเต็มและราคาลดแล้วให้ครบ';err2.style.display='block';return;}
-  err2.style.display='none';
-  const pct=(orig-sale)/orig*100;
-  const saved=orig-sale;
-  document.getElementById('h-pct').textContent=fmt(pct);
+  const err=document.getElementById('err2');
+  if(!orig||!sale){err.textContent='กรุณากรอกราคาก่อนและหลังลดให้ครบ';err.style.display='block';return;}
+  err.style.display='none';
+  const saved=orig-sale,pct=(saved/orig)*100;
+  document.getElementById('h-result').textContent=fmt(pct);
+  document.getElementById('h-detail').textContent='ประหยัดได้ '+fmt(saved)+' บาท';
+  document.getElementById('h-orig-val').textContent=fmt(orig)+' บาท';
+  document.getElementById('h-sale-val').textContent=fmt(sale)+' บาท';
   document.getElementById('h-saved').textContent=fmt(saved)+' บาท';
-  saveHist(fmt(pct)+'%','จาก '+fmt(orig)+' เหลือ '+fmt(sale));
+  document.getElementById('h-pct-val').textContent=fmt(pct)+'%';
   showRes('r2');
 }
 
 function calcOriginal(){
   const sale=parseFloat(document.getElementById('o-sale').value);
   const pct=parseFloat(document.getElementById('o-pct').value);
-  const err3=document.getElementById('err3');
-  if(!sale||isNaN(pct)||pct>=100){err3.textContent='กรุณากรอกราคาลดแล้วและส่วนลด (ต้องน้อยกว่า 100%)';err3.style.display='block';return;}
-  err3.style.display='none';
-  const orig=sale/(1-pct/100);
-  const saved=orig-sale;
-  document.getElementById('o-orig').textContent=fmt(orig);
-  document.getElementById('o-saved').textContent=fmt(saved)+' บาท';
-  saveHist(fmt(orig)+' บาท','หาราคาเต็ม ลด '+pct+'%');
+  const err=document.getElementById('err3');
+  if(!sale||isNaN(pct)||pct>=100){err.textContent='กรุณากรอกราคาลดแล้วและส่วนลด (ต้องน้อยกว่า 100%)';err.style.display='block';return;}
+  err.style.display='none';
+  const orig=sale/(1-pct/100),disc=orig-sale;
+  document.getElementById('o-result').textContent=fmt(orig);
+  document.getElementById('o-detail').textContent='ส่วนลด '+fmt(disc)+' บาท';
+  document.getElementById('o-full').textContent=fmt(orig)+' บาท';
+  document.getElementById('o-discount').textContent='−'+fmt(disc)+' บาท';
+  document.getElementById('o-final').textContent=fmt(sale)+' บาท';
   showRes('r3');
 }
 </script>
