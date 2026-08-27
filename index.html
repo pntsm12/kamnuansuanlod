@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-<title>คิดส่วนลด — ราคาหลังลด ลดหลายชั้น และย้อนหาราคาเต็ม</title>
+<title>คิดส่วนลด 4 สูตร | ราคาหลังลด ลดหลายชั้น ย้อนหาราคาเต็ม</title>
 <meta name="description" content="คิดส่วนลด 4 สูตร ราคาหลังลด ลดหลายชั้น หาว่าลดกี่ % และย้อนหาราคาเต็มจากราคาลดแล้ว">
 <link rel="canonical" href="https://kamnuan.net/kamnuansuanlod/">
-<meta property="og:title" content="คิดส่วนลด — ราคาหลังลด ลดหลายชั้น และย้อนหาราคาเต็ม">
+<meta property="og:title" content="คิดส่วนลด 4 สูตร | ราคาหลังลด ลดหลายชั้น ย้อนหาราคาเต็ม">
 <meta property="og:description" content="คิดส่วนลด 4 สูตร ราคาหลังลด ลดหลายชั้น หาว่าลดกี่ % และย้อนหาราคาเต็ม">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://kamnuan.net/kamnuansuanlod/">
@@ -33,6 +33,15 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 .logo-en{font-size:9px;font-weight:600;color:#96938C;letter-spacing:2px;}
 .back-btn{display:inline-flex;align-items:center;gap:4px;height:36px;padding:0 10px;border:1px solid var(--b0);border-radius:8px;background:#FFFFFF;font-family:'Sarabun',sans-serif;font-size:12px;font-weight:500;color:#52504C;text-decoration:none;white-space:nowrap;}
 .back-btn svg{width:13px;height:13px;stroke:currentColor;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
+.menu-wrap{position:relative;flex-shrink:0;}
+.menu-btn{width:36px;height:36px;flex-shrink:0;display:flex;align-items:center;justify-content:center;border:1px solid var(--b0);border-radius:8px;background:#FFFFFF;cursor:pointer;padding:0;transition:transform .1s ease;}
+.menu-btn:active{transform:scale(.94);}
+.menu-btn svg{width:16px;height:16px;stroke:#52504C;stroke-width:2;stroke-linecap:round;}
+.menu-panel{position:absolute;top:44px;right:0;min-width:190px;background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r);box-shadow:0 8px 24px rgba(0,0,0,0.14);padding:6px;opacity:0;transform:scale(.96) translateY(-4px);transform-origin:top right;pointer-events:none;transition:opacity .15s ease,transform .15s ease;z-index:200;}
+.menu-panel.open{opacity:1;transform:scale(1) translateY(0);pointer-events:auto;}
+.menu-panel a{display:block;padding:11px 12px;border-radius:8px;font-family:'Sarabun',sans-serif;font-size:13px;color:#18181A;text-decoration:none;}
+.menu-panel a:active{background:#EFEFEC;}
+@media(hover:hover){.menu-panel a:hover{background:#EFEFEC;}}
 
 .page{width:100%;max-width:600px;margin:0 auto;padding:20px 16px 80px;}
 .page-hd{margin-bottom:20px;}
@@ -63,9 +72,13 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 .divider-label{font-size:11px;font-weight:600;color:#96938C;margin:4px 0 10px;text-align:center;}
 
 .btn-calc{width:100%;height:50px;margin-top:4px;background:#18181A;color:#FFFFFF;border:none;border-radius:var(--r-lg);font-family:'Sarabun',sans-serif;font-size:16px;font-weight:600;cursor:pointer;}
+.btn-calc:active,.m-tab:active,.faq-q:active{transform:scale(.97);}
 .err-msg{display:none;margin-top:10px;font-size:13px;color:#DC2626;text-align:center;}
 
 .result-box{display:none;margin-top:16px;}
+.result-box.show{display:block;animation:resultIn .35s ease both;}
+@keyframes resultIn{from{opacity:0;transform:translateY(10px);}to{opacity:1;transform:translateY(0);}}
+@media(prefers-reduced-motion:reduce){.result-box.show{animation:none;}}
 .result-top{background:#18181A;color:#FFFFFF;border-radius:var(--r-lg);padding:20px 16px;text-align:center;margin-bottom:10px;}
 .result-label{font-size:13px;opacity:.7;margin-bottom:4px;}
 .result-num{font-family:'Noto Serif Thai',serif;font-size:42px;font-weight:700;line-height:1.1;}
@@ -103,14 +116,15 @@ header{position:sticky;top:0;z-index:100;height:52px;display:flex;align-items:ce
 
 .related-wrap{margin-top:28px;padding-top:24px;border-top:1px solid var(--b0);}
 .related-title{font-size:11px;font-weight:600;color:#96938C;letter-spacing:.06em;text-transform:uppercase;margin-bottom:10px;}
-.related-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px;}
-.related-card{display:flex;align-items:center;gap:10px;padding:12px;background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r);text-decoration:none;}
+.related-grid{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:8px;}
+.related-card{display:flex;align-items:center;gap:10px;padding:12px;background:#FFFFFF;border:1px solid var(--b0);border-radius:var(--r);text-decoration:none;transition:transform .1s ease;}
+.related-card:active{transform:scale(.97);}
 .related-ico{width:32px;height:32px;border-radius:8px;background:#18181A;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
 .related-ico svg{width:15px;height:15px;stroke:#FFFFFF;stroke-width:2;fill:none;stroke-linecap:round;stroke-linejoin:round;}
-.related-name{font-size:13px;font-weight:500;color:#18181A;}
+.related-name{font-size:13px;font-weight:500;color:#18181A;flex:1;min-width:0;}
+.related-arrow{width:13px;height:13px;stroke:#96938C;stroke-width:2;fill:none;flex-shrink:0;}
 
 footer{border-top:1px solid var(--b0);padding:20px 16px;text-align:center;font-size:12px;color:#96938C;line-height:2;}
-footer a{color:#96938C;text-decoration:none;}
 </style>
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-5RPQNBN2DZ"></script>
 <script>
@@ -135,6 +149,17 @@ footer a{color:#96938C;text-decoration:none;}
     </div>
   </a>
   <a class="back-btn" href="/"><svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6"/></svg>เครื่องมือทั้งหมด</a>
+  <div class="menu-wrap">
+    <button class="menu-btn" id="menuBtn" aria-haspopup="true" aria-expanded="false" aria-label="เมนู" onclick="toggleMenu(event)" type="button">
+      <svg viewBox="0 0 24 24"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+    </button>
+    <div class="menu-panel" id="menuPanel" role="menu">
+      <a href="/about.html" role="menuitem">เกี่ยวกับเรา</a>
+      <a href="/privacy.html" role="menuitem">นโยบายความเป็นส่วนตัว</a>
+      <a href="/terms.html" role="menuitem">เงื่อนไข</a>
+      <a href="/contact.html" role="menuitem">ติดต่อ</a>
+    </div>
+  </div>
 </header>
 
 <div class="page">
@@ -153,21 +178,21 @@ footer a{color:#96938C;text-decoration:none;}
   <!-- Mode 0: ราคาหลังลด -->
   <div id="m0">
     <div class="card"><div class="card-body">
-      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="b-price" placeholder="500" inputmode="decimal"></div></div>
-      <div class="field"><label class="lbl">ส่วนลด</label><div class="inp-wrap"><input type="number" id="b-pct" placeholder="20" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
+      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="b-price" placeholder="500" inputmode="decimal" oninput="invalidateResult(0)"></div></div>
+      <div class="field"><label class="lbl">ส่วนลด</label><div class="inp-wrap"><input type="number" id="b-pct" placeholder="20" inputmode="decimal" oninput="invalidateResult(0)"><div class="inp-sfx">%</div></div></div>
       <button class="btn-calc" onclick="calcBasic()" type="button">คำนวณ</button>
       <div class="err-msg" id="err0"></div>
     </div></div>
     <div class="result-box" id="r0">
       <div class="result-top">
         <div class="result-label">ราคาหลังลด</div>
-        <div><span class="result-num" id="b-result">—</span><span class="result-unit">บาท</span></div>
+        <div><span class="result-num" id="b-result">–</span><span class="result-unit">บาท</span></div>
         <div class="result-sub" id="b-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-label">ราคาเต็ม</span><span class="bd-val" id="b-full">—</span></div>
-        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="b-discount">—</span></div>
-        <div class="bd-row total"><span class="bd-label">ราคาหลังลด</span><span class="bd-val" id="b-final">—</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาเต็ม</span><span class="bd-val" id="b-full">–</span></div>
+        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="b-discount">–</span></div>
+        <div class="bd-row total"><span class="bd-label">ราคาหลังลด</span><span class="bd-val" id="b-final">–</span></div>
       </div>
     </div>
   </div>
@@ -175,13 +200,13 @@ footer a{color:#96938C;text-decoration:none;}
   <!-- Mode 1: ลดหลายชั้น -->
   <div id="m1" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="m-price" placeholder="1000" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ราคาเต็ม (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="m-price" placeholder="1000" inputmode="decimal" oninput="invalidateResult(1)"></div></div>
       <div class="field">
         <label class="lbl">ส่วนลดแต่ละชั้น</label>
         <div class="grid2">
-          <div class="field"><div class="inp-wrap"><input type="number" id="m-p1" placeholder="ชั้น 1" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
-          <div class="field"><div class="inp-wrap"><input type="number" id="m-p2" placeholder="ชั้น 2" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
-          <div class="field"><div class="inp-wrap"><input type="number" id="m-p3" placeholder="ชั้น 3" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p1" placeholder="ชั้น 1" inputmode="decimal" oninput="invalidateResult(1)"><div class="inp-sfx">%</div></div></div>
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p2" placeholder="ชั้น 2" inputmode="decimal" oninput="invalidateResult(1)"><div class="inp-sfx">%</div></div></div>
+          <div class="field"><div class="inp-wrap"><input type="number" id="m-p3" placeholder="ชั้น 3" inputmode="decimal" oninput="invalidateResult(1)"><div class="inp-sfx">%</div></div></div>
         </div>
         <div class="hint">กรอกชั้นที่มี ชั้นที่ไม่มีปล่อยว่างไว้</div>
       </div>
@@ -191,7 +216,7 @@ footer a{color:#96938C;text-decoration:none;}
     <div class="result-box" id="r1">
       <div class="result-top">
         <div class="result-label">ราคาหลังลดทุกชั้น</div>
-        <div><span class="result-num" id="m-result">—</span><span class="result-unit">บาท</span></div>
+        <div><span class="result-num" id="m-result">–</span><span class="result-unit">บาท</span></div>
         <div class="result-sub" id="m-detail"></div>
       </div>
       <div class="result-body" id="m-body"></div>
@@ -201,22 +226,22 @@ footer a{color:#96938C;text-decoration:none;}
   <!-- Mode 2: ลดไปกี่ % -->
   <div id="m2" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="field"><label class="lbl">ราคาก่อนลด (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-orig" placeholder="500" inputmode="decimal"></div></div>
-      <div class="field"><label class="lbl">ราคาที่ขายจริง (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-sale" placeholder="350" inputmode="decimal"></div></div>
+      <div class="field"><label class="lbl">ราคาก่อนลด (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-orig" placeholder="500" inputmode="decimal" oninput="invalidateResult(2)"></div></div>
+      <div class="field"><label class="lbl">ราคาที่ขายจริง (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="h-sale" placeholder="350" inputmode="decimal" oninput="invalidateResult(2)"></div></div>
       <button class="btn-calc" onclick="calcHowMuch()" type="button">คำนวณ</button>
       <div class="err-msg" id="err2"></div>
     </div></div>
     <div class="result-box" id="r2">
       <div class="result-top">
         <div class="result-label">ลดไป</div>
-        <div><span class="result-num" id="h-result">—</span><span class="result-unit">%</span></div>
+        <div><span class="result-num" id="h-result">–</span><span class="result-unit">%</span></div>
         <div class="result-sub" id="h-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-label">ราคาก่อนลด</span><span class="bd-val" id="h-orig-val">—</span></div>
-        <div class="bd-row"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="h-sale-val">—</span></div>
-        <div class="bd-row"><span class="bd-label">ประหยัดได้</span><span class="bd-val green" id="h-saved">—</span></div>
-        <div class="bd-row total"><span class="bd-label">ลดไปทั้งหมด</span><span class="bd-val" id="h-pct-val">—</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาก่อนลด</span><span class="bd-val" id="h-orig-val">–</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="h-sale-val">–</span></div>
+        <div class="bd-row"><span class="bd-label">ประหยัดได้</span><span class="bd-val green" id="h-saved">–</span></div>
+        <div class="bd-row total"><span class="bd-label">ลดไปทั้งหมด</span><span class="bd-val" id="h-pct-val">–</span></div>
       </div>
     </div>
   </div>
@@ -224,21 +249,21 @@ footer a{color:#96938C;text-decoration:none;}
   <!-- Mode 3: ย้อนหาราคาเต็ม -->
   <div id="m3" style="display:none">
     <div class="card"><div class="card-body">
-      <div class="field"><label class="lbl">ราคาลดแล้ว (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="o-sale" placeholder="400" inputmode="decimal"></div></div>
-      <div class="field"><label class="lbl">ส่วนลดที่ใช้</label><div class="inp-wrap"><input type="number" id="o-pct" placeholder="20" inputmode="decimal"><div class="inp-sfx">%</div></div></div>
+      <div class="field"><label class="lbl">ราคาลดแล้ว (บาท)</label><div class="inp-wrap"><div class="inp-pfx">฿</div><input type="number" id="o-sale" placeholder="400" inputmode="decimal" oninput="invalidateResult(3)"></div></div>
+      <div class="field"><label class="lbl">ส่วนลดที่ใช้</label><div class="inp-wrap"><input type="number" id="o-pct" placeholder="20" inputmode="decimal" oninput="invalidateResult(3)"><div class="inp-sfx">%</div></div></div>
       <button class="btn-calc" onclick="calcOriginal()" type="button">คำนวณ</button>
       <div class="err-msg" id="err3"></div>
     </div></div>
     <div class="result-box" id="r3">
       <div class="result-top">
         <div class="result-label">ราคาเต็มเดิม</div>
-        <div><span class="result-num" id="o-result">—</span><span class="result-unit">บาท</span></div>
+        <div><span class="result-num" id="o-result">–</span><span class="result-unit">บาท</span></div>
         <div class="result-sub" id="o-detail"></div>
       </div>
       <div class="result-body">
-        <div class="bd-row"><span class="bd-label">ราคาเต็มเดิม</span><span class="bd-val" id="o-full">—</span></div>
-        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="o-discount">—</span></div>
-        <div class="bd-row total"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="o-final">—</span></div>
+        <div class="bd-row"><span class="bd-label">ราคาเต็มเดิม</span><span class="bd-val" id="o-full">–</span></div>
+        <div class="bd-row"><span class="bd-label">ส่วนลด</span><span class="bd-val red" id="o-discount">–</span></div>
+        <div class="bd-row total"><span class="bd-label">ราคาลดแล้ว</span><span class="bd-val" id="o-final">–</span></div>
       </div>
     </div>
   </div>
@@ -283,16 +308,16 @@ footer a{color:#96938C;text-decoration:none;}
   <div class="related-wrap">
     <div class="related-title">เครื่องมือที่เกี่ยวข้อง</div>
     <div class="related-grid">
-      <a class="related-card" href="/kamnuanpercent/"><div class="related-ico"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><span class="related-name">คิดเปอร์เซ็นต์</span></a>
-      <a class="related-card" href="/kamnuanvat/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="related-name">คำนวณ VAT</span></a>
-      <a class="related-card" href="/kamnuanphasi/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="related-name">คำนวณภาษีเงินได้</span></a>
-      <a class="related-card" href="/kamnuandokbia/"><div class="related-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><span class="related-name">คำนวณดอกเบี้ย</span></a>
+      <a class="related-card" href="/kamnuanpercent/"><div class="related-ico"><svg viewBox="0 0 24 24"><line x1="19" y1="5" x2="5" y2="19"/><circle cx="6.5" cy="6.5" r="2.5"/><circle cx="17.5" cy="17.5" r="2.5"/></svg></div><span class="related-name">คิดเปอร์เซ็นต์</span><svg class="related-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a class="related-card" href="/kamnuanvat/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M9 11l3 3L22 4"/><path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/></svg></div><span class="related-name">คำนวณ VAT</span><svg class="related-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a class="related-card" href="/kamnuanbreakeven/"><div class="related-ico"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div><span class="related-name">คำนวณจุดคุ้มทุน</span><svg class="related-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
+      <a class="related-card" href="/kamnuanhaanbill/"><div class="related-ico"><svg viewBox="0 0 24 24"><rect x="2" y="7" width="20" height="14" rx="2"/><path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16"/></svg></div><span class="related-name">หารบิล</span><svg class="related-arrow" viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6"/></svg></a>
     </div>
   </div>
 </div>
 
 <footer role="contentinfo">
-  <p>© 2569 คำนวณ · <a href="/">หน้าหลัก</a> · <a href="/about.html">เกี่ยวกับเรา</a> · <a href="/privacy.html">นโยบายความเป็นส่วนตัว</a> · <a href="/terms.html">เงื่อนไข</a> · <a href="/contact.html">ติดต่อ</a></p>
+  <p>© 2569 คำนวณ</p>
 </footer>
 
 <script>
@@ -306,13 +331,43 @@ function setMode(m){
   });
 }
 
-function showRes(id){document.getElementById(id).style.display='block';requestAnimationFrame(()=>document.getElementById(id).scrollIntoView({behavior:'smooth',block:'nearest'}));}
+/* ซ่อนผลลัพธ์เก่าเมื่อผู้ใช้แก้ input หลังคำนวณไปแล้ว (แยกตามโหมด) */
+function invalidateResult(mode){const box=document.getElementById('r'+mode);if(box) box.classList.remove('show');}
+function showResult(box){box.classList.remove('show');void box.offsetWidth;box.classList.add('show');}
+function showRes(id){const box=document.getElementById(id);showResult(box);requestAnimationFrame(()=>box.scrollIntoView({behavior:'smooth',block:'nearest'}));}
+
+/* เมนู hamburger */
+function toggleMenu(e){
+  e.stopPropagation();
+  const panel=document.getElementById('menuPanel');
+  const btn=document.getElementById('menuBtn');
+  const open=panel.classList.toggle('open');
+  btn.setAttribute('aria-expanded',String(open));
+}
+document.addEventListener('click',function(e){
+  const panel=document.getElementById('menuPanel');
+  const btn=document.getElementById('menuBtn');
+  if(panel.classList.contains('open') && !panel.contains(e.target) && e.target!==btn){
+    panel.classList.remove('open');
+    btn.setAttribute('aria-expanded','false');
+  }
+});
+document.addEventListener('keydown',function(e){
+  if(e.key==='Escape'){
+    const panel=document.getElementById('menuPanel');
+    if(panel.classList.contains('open')){
+      panel.classList.remove('open');
+      document.getElementById('menuBtn').setAttribute('aria-expanded','false');
+    }
+  }
+});
 
 function calcBasic(){
   const p=parseFloat(document.getElementById('b-price').value);
   const pct=parseFloat(document.getElementById('b-pct').value);
   const err=document.getElementById('err0');
   if(!p||isNaN(pct)){err.textContent='กรุณากรอกราคาเต็มและส่วนลดให้ครบ';err.style.display='block';return;}
+  if(p<=0||pct<0||pct>100){err.textContent='ราคาต้องมากกว่า 0 และส่วนลดต้องอยู่ระหว่าง 0-100%';err.style.display='block';return;}
   err.style.display='none';
   const disc=p*pct/100,final=p-disc;
   document.getElementById('b-result').textContent=fmt(final);
@@ -320,6 +375,7 @@ function calcBasic(){
   document.getElementById('b-full').textContent=fmt(p)+' บาท';
   document.getElementById('b-discount').textContent='−'+fmt(disc)+' บาท';
   document.getElementById('b-final').textContent=fmt(final)+' บาท';
+  gtag('event','calculate_click',{tool_name:'kamnuansuanlod',mode:'basic'});
   showRes('r0');
 }
 
@@ -330,6 +386,8 @@ function calcMulti(){
   const p3=parseFloat(document.getElementById('m-p3').value)||0;
   const err=document.getElementById('err1');
   if(!p||!p1){err.textContent='กรุณากรอกราคาเต็มและส่วนลดชั้นที่ 1';err.style.display='block';return;}
+  if(p<=0){err.textContent='ราคาเต็มต้องมากกว่า 0';err.style.display='block';return;}
+  if(p1<0||p1>100||p2<0||p2>100||p3<0||p3>100){err.textContent='ส่วนลดแต่ละชั้นต้องอยู่ระหว่าง 0-100%';err.style.display='block';return;}
   err.style.display='none';
   let cur=p,rows='',totalDisc=0;
   [[p1,'ชั้น 1'],[p2,'ชั้น 2'],[p3,'ชั้น 3']].forEach(([pct,label])=>{
@@ -346,6 +404,7 @@ function calcMulti(){
     `<div class="bd-row"><span class="bd-label">ราคาเต็ม</span><span class="bd-val">${fmt(p)} บาท</span></div>`+
     rows+
     `<div class="bd-row total"><span class="bd-label">ราคาหลังลดทุกชั้น</span><span class="bd-val">${fmt(cur)} บาท</span></div>`;
+  gtag('event','calculate_click',{tool_name:'kamnuansuanlod',mode:'multi'});
   showRes('r1');
 }
 
@@ -354,6 +413,8 @@ function calcHowMuch(){
   const sale=parseFloat(document.getElementById('h-sale').value);
   const err=document.getElementById('err2');
   if(!orig||!sale){err.textContent='กรุณากรอกราคาก่อนและหลังลดให้ครบ';err.style.display='block';return;}
+  if(orig<=0||sale<0){err.textContent='กรุณากรอกตัวเลขที่ไม่ติดลบ';err.style.display='block';return;}
+  if(sale>orig){err.textContent='ราคาที่ขายจริงมากกว่าราคาก่อนลด แสดงว่าราคาขึ้นไม่ใช่ส่วนลด';err.style.display='block';return;}
   err.style.display='none';
   const saved=orig-sale,pct=(saved/orig)*100;
   document.getElementById('h-result').textContent=fmt(pct);
@@ -362,6 +423,7 @@ function calcHowMuch(){
   document.getElementById('h-sale-val').textContent=fmt(sale)+' บาท';
   document.getElementById('h-saved').textContent=fmt(saved)+' บาท';
   document.getElementById('h-pct-val').textContent=fmt(pct)+'%';
+  gtag('event','calculate_click',{tool_name:'kamnuansuanlod',mode:'howmuch'});
   showRes('r2');
 }
 
@@ -370,6 +432,7 @@ function calcOriginal(){
   const pct=parseFloat(document.getElementById('o-pct').value);
   const err=document.getElementById('err3');
   if(!sale||isNaN(pct)||pct>=100){err.textContent='กรุณากรอกราคาลดแล้วและส่วนลด (ต้องน้อยกว่า 100%)';err.style.display='block';return;}
+  if(sale<=0||pct<0){err.textContent='กรุณากรอกตัวเลขที่ไม่ติดลบ';err.style.display='block';return;}
   err.style.display='none';
   const orig=sale/(1-pct/100),disc=orig-sale;
   document.getElementById('o-result').textContent=fmt(orig);
@@ -377,6 +440,7 @@ function calcOriginal(){
   document.getElementById('o-full').textContent=fmt(orig)+' บาท';
   document.getElementById('o-discount').textContent='−'+fmt(disc)+' บาท';
   document.getElementById('o-final').textContent=fmt(sale)+' บาท';
+  gtag('event','calculate_click',{tool_name:'kamnuansuanlod',mode:'original'});
   showRes('r3');
 }
 </script>
